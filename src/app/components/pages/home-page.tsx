@@ -1,6 +1,10 @@
+import { Sidebar } from "../common/sidebar";
+
 const HomePage = () => {
 	return (
-		<div>Page</div>
+		<div className='block-content__home home-block'>
+			<Sidebar classesParent='home-block' />
+		</div>
 	);
 };
 
