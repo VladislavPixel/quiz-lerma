@@ -1,0 +1,14 @@
+{
+	"mainMenu": [
+		{"text": "QuizLerma", "path": "/", "icon": "./assets/images/icons/magic-hat-v.svg", "altIcon": "Иконка сервиса - QuizLerma: волшебная шляпа фиолетового цвета.", "title": "Нажмите, чтобы перейти на главную или воспользуйтесь выпадающим меню."},
+		{"text": "Поиск", "path": "/search", "icon": "./assets/images/icons/search.svg", "altIcon": "Иконка поиска - лупа.", "title": "Нажмите, чтобы перейти на страницу поиска по сайту."},
+		{"text": "Главная", "path": "/", "icon": "./assets/images/icons/home.svg", "altIcon": "Иконка домашней страницы - домик.", "title": "Нажмите, чтобы перейти на главную."},
+		{"text": "Тесты", "path": "/tests", "icon": "./assets/images/icons/tests.svg", "altIcon": "Иконка страницы с тестами - тестовый лист.", "title": "Нажмите, чтобы перейти на страницу с тестами."},
+		{"text": "Рейтинг", "path": "/rating", "icon": "./assets/images/icons/star.svg", "altIcon": "Иконка страницы с рейтингами - звезда.", "title": "Нажмите, чтобы перейти на страницу с рейтингом."},
+		{"text": "Создать", "path": "/create-test", "icon": "./assets/images/icons/plus.svg", "altIcon": "Иконка страницы с созданием тестов - плюсик в круге.", "title": "Нажмите, чтобы перейти на страницу создания тестов."},
+		{"text": "О нас", "path": "/about-us", "icon": "./assets/images/icons/feather.svg", "altIcon": "Иконка страницы с информацией о нас - перо, которое пишет.", "title": "Нажмите, чтобы перейти на страницу информации о нас."},
+		{"text": "Новости разработчиков", "path": "/news-from-developers", "icon": "./assets/images/icons/developer.svg", "altIcon": "Иконка страницы с новостями от разработчиков - разработчик в гарнитуре VR.", "title": "Нажмите, чтобы перейти на страницу новостей от разработчиков."},
+		{"text": "Мерч", "path": "/merch-box", "icon": "./assets/images/icons/magic-box.svg", "altIcon": "Иконка страницы с мерчем QuizLerma - коробка с магией.", "title": "Нажмите, чтобы перейти на страницу, где есть возможность приобрести мерч QuizLerma."},
+		{"text": "Авторизация", "path": "/auth", "icon": "./assets/images/icons/user.svg", "altIcon": "Иконка пользователя.", "title": "Нажмите, чтобы перейти на страницу входа или воспользуйтесь выпадающим меню."}
+	]
+}

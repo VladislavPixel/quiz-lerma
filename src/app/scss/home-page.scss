@@ -1,0 +1,16 @@
+.home-block {
+	width: 100%;
+	height: 100%;
+	&__container {
+		flex: 1 1 auto;
+	}
+	&__sidebar {
+		flex: 0 1 6%;
+	}
+	&__navbar {
+
+	}
+	&__container {
+		background-color: $mainBackgroundColor;
+	}
+}
