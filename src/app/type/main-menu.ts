@@ -1,4 +1,5 @@
 export interface IMainMenuElement {
+	_id: number;
 	text: string;
 	path: string;
 	icon: string;

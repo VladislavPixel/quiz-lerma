@@ -1,0 +1,30 @@
+.title-head-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	&__name {
+		font-size: 50px;
+		margin-bottom: 15px;
+		line-height: 115%;
+		color: $basicPurple;
+		font-weight: 700;
+	}
+	&__paragraph {
+		font-size: 22px;
+		color: $darkGrayColor;
+		line-height: 130%;
+		max-width: 800px;
+	}
+	&__link {
+		color: aliceblue;
+		text-decoration: aliceblue wavy underline;
+		transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s;
+		font-weight: 700;
+		&:hover {
+			color: $basicPurple;
+			text-decoration: $basicPurple wavy underline;
+		}
+	}
+}

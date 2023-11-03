@@ -1,16 +1,25 @@
 import { Sidebar } from '../common/sidebar';
 import { MenuMain } from '../ui/menu-main';
-import auxiliaryData from '../../auxiliary-data.json';
+import { routesData } from "../../routes";
 import { HeadMessageLove } from '../common/head-message-love';
+import { HeadTitle } from '../common/head-title';
+import { Footer } from '../common/footer';
 
 const HomePage = () => {
 	return (
 		<div className='block-content__home home-block'>
 			<Sidebar classesParent='home-block'>
-				<MenuMain classesParent='home-block' data={auxiliaryData.mainMenu} />
+				<MenuMain classesParent='home-block' data={routesData} />
 			</Sidebar>
 			<main className='home-block__container'>
-				<HeadMessageLove classesParent='home-block' />
+				<header className='home-block__header-block block-header-home'>
+					<HeadMessageLove classesParent='block-header-home' />
+					<HeadTitle classesParent='block-header-home' />
+				</header>
+				<div className='home-block__main-section section-main-home'>
+
+				</div>
+				<Footer classesParent='home-block' />
 			</main>
 		</div>
 	);

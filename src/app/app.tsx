@@ -1,4 +1,3 @@
-import React from 'react';
 import './scss/style.scss';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './layots/home';

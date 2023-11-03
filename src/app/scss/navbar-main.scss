@@ -3,10 +3,6 @@
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
-	&__icon {
-		width: 60px;
-		height: 60px;
-	}
 	&__list {
 
 	}
@@ -33,7 +29,15 @@
 			transition: all 0.3s ease 0s;
 			transform: skewX(45deg) scale(0, 1);
 		}
-		&:hover {
+		&.selectable {
+			&:hover {
+				&:after {
+					transform: skewX(45deg) scale(1.5, 1.5);
+				}
+				box-shadow: $blackShadow;
+			}
+		}
+		&.selectable.active {
 			&:after {
 				transform: skewX(45deg) scale(1.5, 1.5);
 			}
@@ -49,6 +53,7 @@
 	&__text {
 		font-size: 16px;
 		color: aliceblue;
+		text-align: center;
 	}
 }
 

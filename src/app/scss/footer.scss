@@ -1,0 +1,94 @@
+.block-footer {
+	padding: 15px;
+	background-color: $darkBlueBackgroundColor;
+	box-shadow: $blackShadow;
+	&__copyright {
+		color: $darkGrayColor;
+		margin-bottom: 5px;
+		font-size: 13px;
+	}
+	&__sub-copy {
+		color: $darkGrayColor;
+		line-height: 125%;
+		font-size: 13px;
+	}
+	&__email {
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 17px;
+		color: $darkGrayColor;
+		span {
+			margin-right: 10px;
+		}
+		a {
+			font-weight: 700;
+			color: aliceblue;
+			transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s;
+			text-decoration: aliceblue wavy underline;
+			&:hover {
+				color: $basicPurple;
+				text-decoration: $basicPurple wavy underline;
+			}
+		}
+	}
+	&__logo {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-bottom: 15px;
+	}
+	&__link-icon {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		span {
+			font-size: 18px;
+			color: aliceblue;
+			font-weight: 600;
+			transition: color 0.3s ease 0s;
+			text-align: center;
+		}
+		img {
+			flex: 0 0 60px;
+			width: 60px;
+			height: 60px;
+			margin-bottom: 3px;
+		}
+		&:hover {
+			span {
+				color: $basicPurple;
+			}
+		}
+	}
+	&__row {
+		display: flex;
+		margin-bottom: 15px;
+		margin: 0px -10px;
+	}
+	&__column {
+		flex: 0 1 50%;
+		padding: 0px 10px;
+	}
+	&__selection-information {
+		color: $darkGrayColor;
+		line-height: 125%;
+		font-size: 17px;
+	}
+	&__gratitude {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		span {
+			margin-right: 10px;
+			color: aliceblue;
+			font-size: 18px;
+		}
+		img {
+			flex: 0 0 50px;
+			width: 50px;
+			height: 50px;
+		}
+	}
+}

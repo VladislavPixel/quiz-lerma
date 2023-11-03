@@ -5,7 +5,7 @@ interface IHeadMessageLoveProps {
 const HeadMessageLove = ({ classesParent }: IHeadMessageLoveProps) => {
 	return (
 		<div className={`${classesParent}__head-message`}>
-			<span title="Послание нашим пользователям.">Из России с любовью</span>
+			<h3 title="Послание нашим пользователям.">Из России с любовью</h3>
 			<img title='Сердечко от разработчиков :)' src='./assets/images/icons/heart.svg' alt='Иконка сердца.' />
 		</div>
 	);

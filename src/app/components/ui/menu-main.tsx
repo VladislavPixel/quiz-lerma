@@ -13,16 +13,16 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 		<nav className={`${classesParent}__navbar navbar-main`}>
 			<div className='navbar-main__head-block'>
 				<ul className='navbar-main__list'>
-					{data.map(({ text, path, icon, altIcon, title }: IMainMenuElement, index: number) => {
+					{data.map(({ text, path, icon, altIcon, title, _id }: IMainMenuElement, index: number) => {
 						if (index === data.length - 1) {
 							return null;
 						}
 
 						return (
-							<li className='navbar-main__element'>
-								<NavLink title={title} className={'navbar-main__link' + (index === 0 ? " big" : "")} to={path}>
+							<li key={_id} className='navbar-main__element'>
+								<NavLink title={title} className={'navbar-main__link' + (index === 0 ? ' big' : '') + (index !== 0 ? ' selectable' : '')} to={path}>
 									<img src={icon} alt={altIcon} className='navbar-main__icon' />
-									<div className='navbar-main__text'>{text}</div>
+									<span className='navbar-main__text'>{text}</span>
 								</NavLink>
 							</li>
 						);
@@ -30,9 +30,9 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 				</ul>
 			</div>
 			<div className='navbar-main__footer'>
-				<NavLink title={lastElement.title} className='navbar-main__link' to={lastElement.path}>
+				<NavLink title={lastElement.title} className='navbar-main__link selectable' to={lastElement.path}>
 					<img src={lastElement.icon} alt={lastElement.altIcon} className='navbar-main__icon' />
-					<div className='navbar-main__text'>{lastElement.text}</div>
+					<span className='navbar-main__text'>{lastElement.text}</span>
 				</NavLink>
 			</div>
 		</nav>
