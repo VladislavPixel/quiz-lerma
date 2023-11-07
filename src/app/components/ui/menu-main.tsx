@@ -1,5 +1,5 @@
 import type { MainMenu, IMainMenuElement } from '../../type/main-menu';
-import { NavLink } from 'react-router-dom';
+import { LinkMenu } from '../common/link-menu';
 
 interface IMenuMainProps {
 	classesParent: string;
@@ -20,20 +20,14 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 
 						return (
 							<li key={_id} className='navbar-main__element'>
-								<NavLink title={title} className={'navbar-main__link' + (index === 0 ? ' big' : '') + (index !== 0 ? ' selectable' : '')} to={path}>
-									<img src={icon} alt={altIcon} className='navbar-main__icon' />
-									<span className='navbar-main__text'>{text}</span>
-								</NavLink>
+								<LinkMenu classesParent={(index === 0 ? 'big ' : '') + (index !== 0 ? 'selectable ' : '') + 'navbar-main'} title={title} path={path} icon={icon} altIcon={altIcon} text={text} type='NavLink' />
 							</li>
 						);
 					})}
 				</ul>
 			</div>
 			<div className='navbar-main__footer'>
-				<NavLink title={lastElement.title} className='navbar-main__link selectable' to={lastElement.path}>
-					<img src={lastElement.icon} alt={lastElement.altIcon} className='navbar-main__icon' />
-					<span className='navbar-main__text'>{lastElement.text}</span>
-				</NavLink>
+				<LinkMenu path={lastElement.path} title={lastElement.title} classesParent='selectable navbar-main' icon={lastElement.icon} altIcon={lastElement.altIcon} text={lastElement.text} type='NavLink' />
 			</div>
 		</nav>
 	);

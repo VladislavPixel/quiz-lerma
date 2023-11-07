@@ -5,6 +5,13 @@ export interface IMainMenuElement {
 	icon: string;
 	altIcon: string;
 	title: string;
+	type?: string;
+	hoverMenu?: IHoverMenu;
+};
+
+export interface IHoverMenu {
+	title: string;
+	data: IMainMenuElement[];
 };
 
 export type MainMenu = IMainMenuElement[];

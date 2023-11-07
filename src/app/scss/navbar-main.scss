@@ -3,15 +3,21 @@
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 100;
 	&__list {
 
 	}
-	&__link {
+	&__link-menu {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		padding: 15px;
+		padding: 10px;
 		position: relative;
 		z-index: 1;
 		overflow: hidden;
@@ -44,7 +50,7 @@
 			box-shadow: $blackShadow;
 		}
 	}
-	&__icon {
+	&__img {
 		flex: 0 0 30px;
 		width: 30px;
 		height: 30px;
@@ -57,9 +63,9 @@
 	}
 }
 
-.navbar-main__link {
+.navbar-main__link-menu {
 	&.big {
-		.navbar-main__icon {
+		.navbar-main__img {
 			flex: 0 0 70px;
 			width: 70px;
 			height: 70px;

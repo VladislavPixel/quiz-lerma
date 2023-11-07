@@ -1,6 +1,7 @@
-import { Link, NavLink } from 'react-router-dom';
 import { logoRoute, routesData } from '../../routes';
 import type { IMainMenuElement } from '../../type/main-menu';
+import { LinkMenu } from './link-menu';
+import { Link } from 'react-router-dom';
 
 interface IFooterProps {
 	classesParent: string;
@@ -17,14 +18,11 @@ const Footer = ({ classesParent }: IFooterProps) => {
 		<footer className={`${classesParent}__footer-block block-footer`}>
 			<div className='block-footer__container _container'>
 				<div className='block-footer__logo'>
-					<Link className='block-footer__link-icon' to={path} title='Нажмите, чтобы перейти на главную страницу.'>
-						<img src={icon} alt={altIcon} />
-						<span>{text}</span>
-					</Link>
+					<LinkMenu classesParent='block-footer' icon={icon} altIcon={altIcon} text={text} path={path} title='Нажмите, чтобы перейти на главную страницу.' type='Link' />
 				</div>
 				<div className='block-footer__row'>
 					<div className='block-footer__column'>
-						<p className='block-footer__selection-information'>Нас выбирают школьники, студенты, преподаватели, сотрудники различных организаций, а также обычные пользователи, которые хотят провести время с удовольствием. «Процесс создания тестов и само тестирование могут быть увлекательными» - это и есть то, что нас всех объединяет.</p>
+						<p title='Нас выбирают' className='block-footer__selection-information'>Нас выбирают школьники, студенты, преподаватели, сотрудники различных организаций, а также обычные пользователи, которые хотят провести время с удовольствием. «Процесс создания тестов и само тестирование могут быть увлекательными» - это и есть то, что нас всех объединяет.</p>
 						<div className='block-footer__gratitude'>
 							<span title='Слова благодарности'>Спасибо, что Вы с нами</span>
 							<img title='Держим за Вас кулачки' src='./assets/images/icons/fist.svg' alt='Иконка кулака' />
@@ -39,13 +37,18 @@ const Footer = ({ classesParent }: IFooterProps) => {
 
 								return (
 									<div key={_id} className='footer-menu-panel__column'>
-										<NavLink className='footer-menu-panel__link-menu' to={path} title={title}>
-											<img src={icon} alt={altIcon} />
-											<span>{text}</span>
-										</NavLink>
+										<LinkMenu classesParent='footer-menu-panel' path={path} title={title} icon={icon} altIcon={altIcon} text={text} type='NavLink' />
 									</div>
 								);
 							})}
+						</div>
+						<div className='block-footer__social-network'>
+							{/* ДОБАВИТ социальные сети*/}
+						</div>
+						<div className='block-footer__advertisement advertisement-footer'>
+							<img className='advertisement-footer__icon' src='./assets/images/icons/mouthpiece.svg' alt='Иконка рупора.' />
+							<span title='На случай, если вы хотите с нами сотрудничать.' className='advertisement-footer__text'>По всем вопросам рекламы на этом сайте:</span>
+							<Link className='advertisement-footer__link' to='/advertisement' title='Нажмите, чтобы перейти на страницу рекламы и ознакомиться с нашими условиями.'>здесь!</Link>
 						</div>
 					</div>
 				</div>

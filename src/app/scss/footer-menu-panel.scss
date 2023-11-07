@@ -1,7 +1,11 @@
 .footer-menu-panel {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 	&__column {
-		flex: 0 1 12.5%;
+		flex: 0 1 16.65%;
+		margin: 0px 10px 15px 0px;
 	}
 	&__link-menu {
 		display: flex;
@@ -14,6 +18,15 @@
 		}
 		span {
 			text-align: center;
+			color: aliceblue;
+			transition: color 0.3s ease 0s;
+			font-size: 16px;
+		}
+		&:hover {
+			span {
+				color: $basicPurple;
+				text-decoration: $basicPurple  underline;
+			}
 		}
 	}
 }
