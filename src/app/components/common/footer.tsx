@@ -2,6 +2,7 @@ import { logoRoute, routesData } from '../../routes';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from './link-menu';
 import { Link } from 'react-router-dom';
+import { socialNetworkIterable } from '../../routes';
 
 interface IFooterProps {
 	classesParent: string;
@@ -30,24 +31,25 @@ const Footer = ({ classesParent }: IFooterProps) => {
 					</div>
 					<div className='block-footer__column'>
 						<div className='block-footer__menu-panel-footer footer-menu-panel'>
-							{routesData.map(({ path, title, icon, altIcon, text, _id }, index: number) => {
+							{routesData.map(({ path, title, icon, altIcon, text, _id }: IMainMenuElement, index: number) => {
 								if (index === 0 || index === routesData.length - 1) {
 									return null;
 								}
 
-								return (
-									<div key={_id} className='footer-menu-panel__column'>
-										<LinkMenu classesParent='footer-menu-panel' path={path} title={title} icon={icon} altIcon={altIcon} text={text} type='NavLink' />
-									</div>
-								);
+								return <LinkMenu key={_id} classesParent='footer-menu-panel' path={path} title={title} icon={icon} altIcon={altIcon} text={text} type='NavLink' />;
 							})}
 						</div>
-						<div className='block-footer__social-network'>
-							{/* ДОБАВИТ социальные сети*/}
+						<div title='Подписывайтесь)' className='block-footer__social-network social-network-block'>
+							<div className='social-network-block__title'>Наши социальные сети:</div>
+							<div className='social-network-block__list'>
+								{socialNetworkIterable.map(({ _id, path, altIcon, icon, title, text }: IMainMenuElement) => {
+									return <LinkMenu classesParent='social-network-block' key={_id} type='a:href' title={title} path={path} icon={icon} altIcon={altIcon} text={text} />
+								})}
+							</div>
 						</div>
 						<div className='block-footer__advertisement advertisement-footer'>
 							<img className='advertisement-footer__icon' src='./assets/images/icons/mouthpiece.svg' alt='Иконка рупора.' />
-							<span title='На случай, если вы хотите с нами сотрудничать.' className='advertisement-footer__text'>По всем вопросам рекламы на этом сайте:</span>
+							<span title='На случай, если вы хотите с нами сотрудничать.' className='advertisement-footer__text'>Реклама на этом сайте:</span>
 							<Link className='advertisement-footer__link' to='/advertisement' title='Нажмите, чтобы перейти на страницу рекламы и ознакомиться с нашими условиями.'>здесь!</Link>
 						</div>
 					</div>

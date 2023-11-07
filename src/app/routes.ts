@@ -9,6 +9,12 @@ export const createRoute: IMainMenuElement = {
 	title: 'Нажмите, чтобы перейти на страницу создания тестов.'
 };
 
+export const socialNetworkIterable: IMainMenuElement[] = [
+	{ _id: 100, path: '#discord', text: 'Discord', altIcon: 'Иконка социальной сети - Discord.', icon: './assets/images/icons/social-network-icons/discord.svg', title: 'Нажмите, чтобы перейти в нашу группу discord.', type: 'a:href' },
+	{ _id: 101, path: '#dzen', text: 'Дзен', altIcon: 'Иконка социальной сети - Дзен.', icon: './assets/images/icons/social-network-icons/yandex-zen.svg', title: 'Нажмите, чтобы перейти на наш канал Дзен.', type: 'a:href' },
+	{ _id: 102, path: '#telegram', text: 'Telegram', altIcon: 'Иконка социальной сети - Telegram.', icon: './assets/images/icons/social-network-icons/telegram.svg', title: 'Нажмите, чтобы перейти в нашу группу Telegram.', type: 'a:href' }
+];
+
 export const logoRoute: IMainMenuElement = {
 	_id: 11,
 	text: 'QuizLerma',
@@ -18,11 +24,7 @@ export const logoRoute: IMainMenuElement = {
 	title: 'Нажмите, чтобы перейти на главную страницу или воспользуйтесь выпадающим меню.',
 	hoverMenu: {
 		title: 'Наши соцсети',
-		data: [
-			{ _id: 100, path: '#discord', text: 'Мы присутствуем в Discord', altIcon: 'Иконка социальной сети - Discord.', icon: './assets/images/icons/social-network-icons/discord.svg', title: 'Нажмите, чтобы перейти в нашу группу discord.', type: 'a:href' },
-			{ _id: 101, path: '#dzen', text: 'У нас есть канал на Дзене', altIcon: 'Иконка социальной сети - Дзен.', icon: './assets/images/icons/social-network-icons/yandex-zen.svg', title: 'Нажмите, чтобы перейти на наш канал Дзен.', type: 'a:href' },
-			{ _id: 102, path: '#telegram', text: 'Вы можете найти нас в Telegram', altIcon: 'Иконка социальной сети - Telegram.', icon: './assets/images/icons/social-network-icons/telegram.svg', title: 'Нажмите, чтобы перейти в нашу группу Telegram.', type: 'a:href' }
-		]
+		data: socialNetworkIterable
 	}
 };
 
