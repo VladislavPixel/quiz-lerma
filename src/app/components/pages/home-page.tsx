@@ -17,7 +17,7 @@ const HomePage = () => {
 					<HeadTitle classesParent='block-header-home' />
 				</header>
 				<div className='home-block__main-section section-main-home'>
-
+					
 				</div>
 				<Footer classesParent='home-block' />
 			</main>

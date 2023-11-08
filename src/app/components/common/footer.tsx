@@ -25,7 +25,7 @@ const Footer = ({ classesParent }: IFooterProps) => {
 					<div className='block-footer__column'>
 						<p title='Нас выбирают' className='block-footer__selection-information'>Нас выбирают школьники, студенты, преподаватели, сотрудники различных организаций, а также обычные пользователи, которые хотят провести время с удовольствием. «Процесс создания тестов и само тестирование могут быть увлекательными» - это и есть то, что нас всех объединяет.</p>
 						<div className='block-footer__gratitude'>
-							<span title='Слова благодарности'>Спасибо, что Вы с нами</span>
+							<span title='Слова благодарности'>- Спасибо, что Вы с нами</span>
 							<img title='Держим за Вас кулачки' src='./assets/images/icons/fist.svg' alt='Иконка кулака' />
 						</div>
 					</div>
@@ -43,12 +43,12 @@ const Footer = ({ classesParent }: IFooterProps) => {
 							<div className='social-network-block__title'>Наши социальные сети:</div>
 							<div className='social-network-block__list'>
 								{socialNetworkIterable.map(({ _id, path, altIcon, icon, title, text }: IMainMenuElement) => {
-									return <LinkMenu classesParent='social-network-block' key={_id} type='a:href' title={title} path={path} icon={icon} altIcon={altIcon} text={text} />
+									return <LinkMenu classesParent='social-network-block' key={_id} type='a:href' title={title} path={path} icon={icon} altIcon={altIcon} text={text} />;
 								})}
 							</div>
 						</div>
 						<div className='block-footer__advertisement advertisement-footer'>
-							<img className='advertisement-footer__icon' src='./assets/images/icons/mouthpiece.svg' alt='Иконка рупора.' />
+							<img title='Наш сервис является популярным. Вы сможете протрубить на весь интернет о себе.' className='advertisement-footer__icon' src='./assets/images/icons/mouthpiece.svg' alt='Иконка рупора.' />
 							<span title='На случай, если вы хотите с нами сотрудничать.' className='advertisement-footer__text'>Реклама на этом сайте:</span>
 							<Link className='advertisement-footer__link' to='/advertisement' title='Нажмите, чтобы перейти на страницу рекламы и ознакомиться с нашими условиями.'>здесь!</Link>
 						</div>

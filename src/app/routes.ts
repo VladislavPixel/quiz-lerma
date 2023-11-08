@@ -10,9 +10,9 @@ export const createRoute: IMainMenuElement = {
 };
 
 export const socialNetworkIterable: IMainMenuElement[] = [
-	{ _id: 100, path: '#discord', text: 'Discord', altIcon: 'Иконка социальной сети - Discord.', icon: './assets/images/icons/social-network-icons/discord.svg', title: 'Нажмите, чтобы перейти в нашу группу discord.', type: 'a:href' },
-	{ _id: 101, path: '#dzen', text: 'Дзен', altIcon: 'Иконка социальной сети - Дзен.', icon: './assets/images/icons/social-network-icons/yandex-zen.svg', title: 'Нажмите, чтобы перейти на наш канал Дзен.', type: 'a:href' },
-	{ _id: 102, path: '#telegram', text: 'Telegram', altIcon: 'Иконка социальной сети - Telegram.', icon: './assets/images/icons/social-network-icons/telegram.svg', title: 'Нажмите, чтобы перейти в нашу группу Telegram.', type: 'a:href' }
+	{ _id: 100, path: '#discord', text: 'Discord', altIcon: 'Иконка социальной сети - Discord.', icon: './assets/images/icons/social-network-icons/discord.svg', title: 'Нажмите, чтобы перейти в нашу группу discord.' },
+	{ _id: 101, path: '#dzen', text: 'Дзен', altIcon: 'Иконка социальной сети - Дзен.', icon: './assets/images/icons/social-network-icons/yandex-zen.svg', title: 'Нажмите, чтобы перейти на наш канал Дзен.' },
+	{ _id: 102, path: '#telegram', text: 'Telegram', altIcon: 'Иконка социальной сети - Telegram.', icon: './assets/images/icons/social-network-icons/telegram.svg', title: 'Нажмите, чтобы перейти в нашу группу Telegram.' }
 ];
 
 export const logoRoute: IMainMenuElement = {
@@ -23,7 +23,7 @@ export const logoRoute: IMainMenuElement = {
 	altIcon: 'Иконка сервиса - QuizLerma: волшебная шляпа фиолетового цвета.',
 	title: 'Нажмите, чтобы перейти на главную страницу или воспользуйтесь выпадающим меню.',
 	hoverMenu: {
-		title: 'Наши соцсети',
+		title: 'Наши соцсети:',
 		data: socialNetworkIterable
 	}
 };
@@ -38,8 +38,8 @@ export const authRoute: IMainMenuElement = {
 	hoverMenu: {
 		title: 'У Вас нет учетной записи?',
 		data: [
-			{ _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.', type: "route" },
-			{ _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.', type: "route" }
+			{ _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' },
+			{ _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' }
 		]
 	}
 };

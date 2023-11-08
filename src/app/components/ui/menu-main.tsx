@@ -1,5 +1,7 @@
 import type { MainMenu, IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from '../common/link-menu';
+import { HoverMenu } from '../common/hover-menu';
+import { SocialNetworkHoverBlock } from './social-network-hover-block';
 
 interface IMenuMainProps {
 	classesParent: string;
@@ -13,7 +15,7 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 		<nav className={`${classesParent}__navbar navbar-main`}>
 			<div className='navbar-main__head-block'>
 				<ul className='navbar-main__list'>
-					{data.map(({ text, path, icon, altIcon, title, _id }: IMainMenuElement, index: number) => {
+					{data.map(({ text, path, icon, altIcon, title, _id, hoverMenu }: IMainMenuElement, index: number) => {
 						if (index === data.length - 1) {
 							return null;
 						}
@@ -21,6 +23,11 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 						return (
 							<li key={_id} className='navbar-main__element'>
 								<LinkMenu classesParent={(index === 0 ? 'big ' : '') + (index !== 0 ? 'selectable ' : '') + 'navbar-main'} title={title} path={path} icon={icon} altIcon={altIcon} text={text} type='NavLink' />
+								{hoverMenu &&
+									<HoverMenu classesParent='navbar-main'>
+										<SocialNetworkHoverBlock {...hoverMenu} />
+									</HoverMenu>
+								}
 							</li>
 						);
 					})}

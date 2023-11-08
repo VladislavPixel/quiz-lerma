@@ -9,9 +9,6 @@
 	width: 100%;
 	height: 100vh;
 	z-index: 100;
-	&__list {
-
-	}
 	&__link-menu {
 		display: flex;
 		flex-direction: column;
@@ -61,6 +58,12 @@
 		color: aliceblue;
 		text-align: center;
 	}
+	&__element {
+		position: relative;
+	}
+	&__menu-hover {
+		padding: 15px;
+	}
 }
 
 .navbar-main__link-menu {
@@ -75,4 +78,17 @@
 			font-weight: 600;
 		}
 	}
+}
+
+.hover-menu {
+	background-color: $blackBackgroundColor;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 200;
+	border-radius: $borderRadiusBasic;
+	border: $borderGray;
+	box-shadow: $blackShadow;
+	min-width: 170px;
+	transition: all 0.3s ease 0s;
 }

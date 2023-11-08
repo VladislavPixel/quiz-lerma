@@ -1,0 +1,36 @@
+.hover-block-social-network {
+	&__title {
+		color:$darkGrayColor;
+		font-size: 18px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	&__container-row {
+		display: flex;
+		flex-direction: column;
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+		&:hover {
+			.hover-block-social-network__text {
+				color: $basicPurple;
+				text-decoration: $basicPurple  underline;
+			}
+		}
+	}
+	&__img {
+		flex: 0 0 30px;
+		width: 30px;
+		height: 30px;
+		margin-right: 15px;
+	}
+	&__text {
+		color: aliceblue;
+		transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s;
+	}
+}
