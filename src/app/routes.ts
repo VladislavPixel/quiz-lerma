@@ -1,4 +1,4 @@
-import type { MainMenu, IMainMenuElement } from './type/main-menu';
+import type { MainMenu, IMainMenuElement, IHoverMenu } from './type/main-menu';
 
 export const createRoute: IMainMenuElement = {
 	_id: 66,
@@ -28,6 +28,14 @@ export const logoRoute: IMainMenuElement = {
 	}
 };
 
+export const hoverMenuDataForAuth: IHoverMenu = {
+	title: 'У Вас нет учетной записи?',
+	data: [
+		{ _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' },
+		{ _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' }
+	]
+};
+
 export const authRoute: IMainMenuElement = {
 	_id: 100,
 	text: 'Авторизация',
@@ -35,13 +43,7 @@ export const authRoute: IMainMenuElement = {
 	icon: './assets/images/icons/user.svg',
 	altIcon: 'Иконка пользователя.',
 	title: 'Нажмите, чтобы перейти на страницу входа или воспользуйтесь выпадающим меню.',
-	hoverMenu: {
-		title: 'У Вас нет учетной записи?',
-		data: [
-			{ _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' },
-			{ _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' }
-		]
-	}
+	hoverMenu: hoverMenuDataForAuth
 };
 
 const routesData: MainMenu = [

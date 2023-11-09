@@ -46,15 +46,39 @@ $borderGray: 1px solid #ccc;
 	max-width: 1500px;
 	margin: 0 auto;
 }
+
 ::-webkit-scrollbar{
 	width: 12px;
 }
+
 ::-webkit-scrollbar-track{
 	background: #1f2937;
 	border-radius: 100vh !important;
 }
+
 ::-webkit-scrollbar-thumb{
 	background: linear-gradient(135deg, #4579F5 0%,#514a92  53.01%, #433C87 99.83%);
+}
+
+.button-purple {
+	background-color: $basicPurple;
+	padding: 15px;
+	box-shadow: $blackShadow;
+	color: aliceblue;
+	letter-spacing: 1.5px;
+	line-height: 120%;
+	text-transform: uppercase;
+}
+
+.button-purple-white {
+	background-color: white;
+	padding: 15px;
+	box-shadow: $blackShadow;
+	border: 1px solid $basicPurple;
+	color: $basicPurple;
+	letter-spacing: 1.5px;
+	line-height: 120%;
+	text-transform: uppercase;
 }
 //===========================================================================================================================================================================================
 
@@ -67,4 +91,5 @@ $borderGray: 1px solid #ccc;
 @import 'section-main-home';
 @import 'footer-menu-panel';
 @import 'hover-block-social-network';
+@import 'hover-block-auth';
 //===========================================================================================================================================================================================

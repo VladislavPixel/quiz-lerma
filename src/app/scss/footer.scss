@@ -29,10 +29,10 @@
 			font-weight: 700;
 			color: aliceblue;
 			transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s;
-			text-decoration: aliceblue wavy underline;
+			text-decoration: aliceblue dotted underline;
 			&:hover {
 				color: $basicPurple;
-				text-decoration: $basicPurple wavy underline;
+				text-decoration: $basicPurple dotted underline;
 			}
 		}
 	}

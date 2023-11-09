@@ -2,6 +2,8 @@ import type { MainMenu, IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from '../common/link-menu';
 import { HoverMenu } from '../common/hover-menu';
 import { SocialNetworkHoverBlock } from './social-network-hover-block';
+import { AuthHoverBlock } from './auth-hover-block';
+import { hoverMenuDataForAuth } from '../../routes';
 
 interface IMenuMainProps {
 	classesParent: string;
@@ -35,6 +37,9 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 			</div>
 			<div className='navbar-main__footer'>
 				<LinkMenu path={lastElement.path} title={lastElement.title} classesParent='selectable navbar-main' icon={lastElement.icon} altIcon={lastElement.altIcon} text={lastElement.text} type='NavLink' />
+				<HoverMenu classesParent='navbar-main'>
+					<AuthHoverBlock {...hoverMenuDataForAuth} />
+				</HoverMenu>
 			</div>
 		</nav>
 	);
