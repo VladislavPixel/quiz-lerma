@@ -60,34 +60,45 @@ $borderGray: 1px solid #ccc;
 	background: linear-gradient(135deg, #4579F5 0%,#514a92  53.01%, #433C87 99.83%);
 }
 
+.btn {
+	border-radius: $borderRadiusBasic;
+	padding: 10px;
+	box-shadow: $blackShadow;
+	line-height: 120%;
+	text-align: center;
+	transition: transform 0.3s ease 0s;
+	&:hover {
+		transform: scale(0.9);
+	}
+}
+
 .button-purple {
 	background-color: $basicPurple;
-	padding: 15px;
-	box-shadow: $blackShadow;
+	border: 1px solid aliceblue;
 	color: aliceblue;
 	letter-spacing: 1.5px;
-	line-height: 120%;
 	text-transform: uppercase;
 }
 
 .button-purple-white {
-	background-color: white;
-	padding: 15px;
-	box-shadow: $blackShadow;
+	background-color: aliceblue;
 	border: 1px solid $basicPurple;
 	color: $basicPurple;
 	letter-spacing: 1.5px;
-	line-height: 120%;
 	text-transform: uppercase;
 }
 //===========================================================================================================================================================================================
 
 // Imports ФАЙЛОВ ДРУГИХ СУЩНОСТЕЙ===========================================================================================================================================================
 @import 'home-page';
+@import 'block-header-home';
 @import 'sidebar';
+@import 'hover-menu';
 @import 'navbar-main';
 @import 'title-head-block';
 @import 'footer';
+@import 'social-network-block';
+@import 'advertisement-footer';
 @import 'section-main-home';
 @import 'footer-menu-panel';
 @import 'hover-block-social-network';

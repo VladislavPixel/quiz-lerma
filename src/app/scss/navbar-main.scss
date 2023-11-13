@@ -69,29 +69,38 @@
 	}
 }
 
-.navbar-main__link-menu {
-	&.big {
-		.navbar-main__img {
-			flex: 0 0 70px;
-			width: 70px;
-			height: 70px;
-		}
-		.navbar-main__text {
-			font-size: 18px;
-			font-weight: 600;
+.navbar-main__link-menu.big {
+	.navbar-main__img {
+		flex: 0 0 70px;
+		width: 70px;
+		height: 70px;
+	}
+	.navbar-main__text {
+		font-size: 18px;
+		font-weight: 600;
+	}
+}
+
+.navbar-main__element {
+	.hover-menu {
+		top: 0;
+	}
+	&:hover {
+		.hover-menu {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }
 
-.hover-menu {
-	background-color: $blackBackgroundColor;
-	position: absolute;
-	top: 0;
-	left: 100%;
-	z-index: 200;
-	border-radius: $borderRadiusBasic;
-	border: $borderGray;
-	box-shadow: $blackShadow;
-	min-width: 170px;
-	transition: all 0.3s ease 0s;
+.navbar-main__footer {
+	.hover-menu {
+		bottom: 0;
+	}
+	&:hover {
+		.hover-menu {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }
