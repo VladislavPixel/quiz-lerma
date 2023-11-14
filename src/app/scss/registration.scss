@@ -1,0 +1,10 @@
+.registration {
+	&__column {
+		flex: 0 1 50%;
+		background-color: $darkBlueBackgroundColor;
+		&:first-child {
+			background-color: $mainBackgroundColor;
+			box-shadow: $blackShadow;
+		}
+	}
+}

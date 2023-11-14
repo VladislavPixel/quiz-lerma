@@ -6,7 +6,7 @@ export const createRoute: IMainMenuElement = {
 	path: '/create-test',
 	icon: './assets/images/icons/plus.svg',
 	altIcon: 'Иконка страницы с созданием тестов - плюсик в круге.',
-	title: 'Нажмите, чтобы перейти на страницу создания тестов.'
+	title: 'Нажмите, чтобы перейти на страницу создания тестов/заданий.'
 };
 
 export const socialNetworkIterable: IMainMenuElement[] = [
@@ -28,18 +28,28 @@ export const logoRoute: IMainMenuElement = {
 	}
 };
 
+const registrationRoute: IMainMenuElement = { _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' };
+
+const signInRoute: IMainMenuElement = { _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' };
+
+const passwordRecoveryRouter: IMainMenuElement = { _id: 202, text: 'Восстановление', path: '/password-recovery', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу восстановления пароля.' };
+
+export const navigationSignInPage: IMainMenuElement[] = [ signInRoute, registrationRoute ];
+
+export const navigationPassowrdRecovery: IMainMenuElement[] = [ passwordRecoveryRouter, signInRoute, registrationRoute ];
+
 export const hoverMenuDataForAuth: IHoverMenu = {
 	title: 'У Вас нет учетной записи?',
 	data: [
-		{ _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' },
-		{ _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' }
+		registrationRoute,
+		signInRoute
 	]
 };
 
 export const authRoute: IMainMenuElement = {
 	_id: 100,
 	text: 'Авторизация',
-	path: '/auth',
+	path: '/sign-in',
 	icon: './assets/images/icons/user.svg',
 	altIcon: 'Иконка пользователя.',
 	title: 'Нажмите, чтобы перейти на страницу входа или воспользуйтесь выпадающим меню.',
@@ -50,7 +60,7 @@ const routesData: MainMenu = [
 	logoRoute,
 	{ _id: 22, text: 'Поиск', path: '/search', icon: './assets/images/icons/search.svg', altIcon: 'Иконка поиска - лупа.', title: 'Нажмите, чтобы перейти на страницу поиска по сайту.' },
 	{ _id: 33, text: 'Главная', path: '/', icon: './assets/images/icons/home.svg', altIcon: 'Иконка домашней страницы - домик.', title: 'Нажмите, чтобы перейти на главную страницу.' },
-	{ _id: 44, text: 'Тесты', path: '/tests', icon: './assets/images/icons/tests.svg', altIcon: 'Иконка страницы с тестами - тестовый лист.', title: 'Нажмите, чтобы перейти на страницу с тестами.' },
+	{ _id: 44, text: 'Тесты / Задания', path: '/tests', icon: './assets/images/icons/tests.svg', altIcon: 'Иконка страницы с тестами - тестовый лист.', title: 'Нажмите, чтобы перейти на страницу с тестами/заданиями.' },
 	{ _id: 55, text: 'Рейтинг', path: '/rating', icon: './assets/images/icons/star.svg', altIcon: 'Иконка страницы с рейтингами - звезда.', title: 'Нажмите, чтобы перейти на страницу с рейтингом.' },
 	createRoute,
 	{ _id: 77, text: 'О нас', path: '/about-us', icon: './assets/images/icons/feather.svg', altIcon: 'Иконка страницы с информацией о нас - перо, которое пишет.', title: 'Нажмите, чтобы перейти на страницу информации о нас.' },

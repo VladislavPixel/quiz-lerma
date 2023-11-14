@@ -2,6 +2,7 @@ import React from 'react';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { Btn } from '../common/btn';
 import { useNavigate } from 'react-router-dom';
+import { HrElement } from '../common/hr-element';
 
 interface IAuthHoverBlockProps {
 	title: string;
@@ -26,7 +27,7 @@ const AuthHoverBlock = ({ title, data }: IAuthHoverBlockProps) => {
 								<img src={icon} className='hover-block-auth__btn-icon' alt={altIcon} />
 								{text}
 							</Btn>
-							{index === 0 && <hr />}
+							<HrElement isShow={index === 0} />
 						</React.Fragment>
 					);
 				})}
