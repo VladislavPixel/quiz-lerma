@@ -1,3 +1,68 @@
 .not-found {
-   
+  &__container {
+		flex-direction: column;
+		background-color: $mainBackgroundColor;
+	}
+	&__main-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		position: relative;
+	}
+	&__cat-element {
+		position: absolute;
+		bottom: -30px;
+		left: -7px;
+		width: 90px;
+		height: 90px;
+		z-index: 10;
+	}
+	&__block {
+		display: flex;
+	}
+	&__column {
+		flex: 0 1 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 10px;
+		hr {
+			margin: 20px 0px;
+		}
+	}
+	&__img {
+		flex: 0 0 150px;
+		width: 150px;
+		height: 150px;
+		margin-bottom: 10px;
+	}
+	&__title {
+		color: aliceblue;
+		font-size: 35px;
+		margin-bottom: 15px;
+	}
+	&__sub-title {
+		color: $darkGrayColor;
+		font-size: 22px;
+		line-height: 130%;
+	}
+	&__message-number {
+		color: aliceblue;
+		font-size: 170px;
+		display: flex;
+		align-items: flex-end;
+		span {
+			font-size: 300px;
+			color: $basicPurple;
+		}
+	}
+	&__btn {
+		&:first-child {
+			margin-right: 15px;
+		}
+	}
 }

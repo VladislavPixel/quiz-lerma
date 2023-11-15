@@ -3,18 +3,20 @@ import { HeadMessageLove } from '../common/head-message-love';
 import { HeadTitle } from '../common/head-title';
 import { Footer } from '../common/footer';
 import { Skeleton } from '../common/skeleton';
+import { Header } from '../common/header';
+import { ContentWrapper } from '../common/content-wrapper';
 
 const HomePage = () => {
 	return (
 		<Skeleton isSidebar={true} classesParent='home-block'>
 			<React.Fragment>
-				<header className='home-block__header-block block-header-home'>
-					<HeadMessageLove classesParent='block-header-home' />
-					<HeadTitle classesParent='block-header-home' />
-				</header>
-				<div className='home-block__main-section section-main-home'>
-					
-				</div>
+				<Header classesParent='home-block'>
+					<HeadMessageLove classesParent='header' />
+					<HeadTitle classesParent='header' />
+				</Header>
+				<ContentWrapper classesParent='home-block'>
+
+				</ContentWrapper>
 				<Footer classesParent='home-block' />
 			</React.Fragment>
 		</Skeleton>

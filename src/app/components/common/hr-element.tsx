@@ -4,7 +4,7 @@ interface IHrElementProps {
 
 const HrElement = ({ isShow }: IHrElementProps) => {
 	if (isShow) {
-		return <hr />;
+		return <hr className="hr" />;
 	}
 
 	return null;

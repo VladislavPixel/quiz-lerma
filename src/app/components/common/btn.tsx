@@ -7,9 +7,7 @@ interface IBtnProps {
 };
 
 const Btn = ({ typeBtn, title, classes, children, onCb }: IBtnProps) => {
-  return (
-    <button onClick={onCb} className={`btn ${classes}`} title={title} type={typeBtn}>{children}</button>
-  );
+  return <button onClick={onCb} className={`btn ${classes}`} title={title} type={typeBtn}>{children}</button>;
 };
 
 export { Btn };

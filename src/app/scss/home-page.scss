@@ -1,12 +1,10 @@
 .home-block {
 	&__container {
 		flex-direction: column;
+		background-color: $mainBackgroundColor;
 	}
 	&__sidebar {
 		flex: 0 1 7%;
 		position: relative;
-	}
-	&__container {
-		background-color: $mainBackgroundColor;
 	}
 }
