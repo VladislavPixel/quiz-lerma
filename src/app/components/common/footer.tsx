@@ -19,7 +19,7 @@ const Footer = ({ classesParent }: IFooterProps) => {
 		<footer className={`${classesParent}__footer-block block-footer`}>
 			<div className='block-footer__container _container'>
 				<div className='block-footer__logo'>
-					<LinkMenu classesParent='block-footer' icon={icon} altIcon={altIcon} text={text} path={path} title='Нажмите, чтобы перейти на главную страницу.' type='Link' />
+					<LinkMenu isImg={true} classesParent='block-footer' icon={icon} altIcon={altIcon} text={text} path={path} title='Нажмите, чтобы перейти на главную страницу.' type='Link' />
 				</div>
 				<div className='block-footer__row'>
 					<div className='block-footer__column'>
@@ -36,14 +36,14 @@ const Footer = ({ classesParent }: IFooterProps) => {
 									return null;
 								}
 
-								return <LinkMenu key={_id} classesParent='footer-menu-panel' path={path} title={title} icon={icon} altIcon={altIcon} text={text} type='NavLink' />;
+								return <LinkMenu isImg={true} key={_id} classesParent='footer-menu-panel' path={path} title={title} icon={icon} altIcon={altIcon} text={text} type='NavLink' />;
 							})}
 						</div>
 						<div title='Подписывайтесь)' className='block-footer__social-network social-network-block'>
 							<div className='social-network-block__title'>Наши социальные сети:</div>
 							<div className='social-network-block__list'>
 								{socialNetworkIterable.map(({ _id, path, altIcon, icon, title, text }: IMainMenuElement) => {
-									return <LinkMenu classesParent='social-network-block' key={_id} type='a:href' title={title} path={path} icon={icon} altIcon={altIcon} text={text} />;
+									return <LinkMenu isImg={true} classesParent='social-network-block' key={_id} type='a:href' title={title} path={path} icon={icon} altIcon={altIcon} text={text} />;
 								})}
 							</div>
 						</div>

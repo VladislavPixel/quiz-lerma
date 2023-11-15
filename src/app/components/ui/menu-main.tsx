@@ -24,7 +24,7 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 
 						return (
 							<li key={_id} className='navbar-main__element'>
-								<LinkMenu classesParent={(index === 0 ? 'big ' : '') + (index !== 0 ? 'selectable ' : '') + 'navbar-main'} title={title} path={path} icon={icon} altIcon={altIcon} text={text} type='NavLink' />
+								<LinkMenu isImg={true} classesParent={(index === 0 ? 'big ' : '') + (index !== 0 ? 'selectable ' : '') + 'navbar-main'} title={title} path={path} icon={icon} altIcon={altIcon} text={text} type='NavLink' />
 								{hoverMenu &&
 									<HoverMenu classesParent='navbar-main'>
 										<SocialNetworkHoverBlock {...hoverMenu} />
@@ -36,7 +36,7 @@ const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
 				</ul>
 			</div>
 			<div className='navbar-main__footer'>
-				<LinkMenu path={lastElement.path} title={lastElement.title} classesParent='selectable navbar-main' icon={lastElement.icon} altIcon={lastElement.altIcon} text={lastElement.text} type='NavLink' />
+				<LinkMenu isImg={true} path={lastElement.path} title={lastElement.title} classesParent='selectable navbar-main' icon={lastElement.icon} altIcon={lastElement.altIcon} text={lastElement.text} type='NavLink' />
 				<HoverMenu classesParent='navbar-main'>
 					<AuthHoverBlock {...hoverMenuDataForAuth} />
 				</HoverMenu>

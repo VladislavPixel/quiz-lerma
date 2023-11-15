@@ -9,7 +9,7 @@ const LeftColumnAuth = ({ title, titleHover, subTitle, iconName, altIcon, points
 	const isParagraphs = points && points.length !== 0;
 
 	return (
-		<div className={`${classesParent}__column column-left-auth`}>
+		<div className={`${classesParent}__column column-left-auth column-auth`}>
 			<div title={titleHover} className='column-left-auth__block'>
 				<img className='column-left-auth__img' src={`./assets/images/icons/${iconName}`} alt={altIcon} />
 				<h2 className='column-left-auth__title'>{title}</h2>

@@ -1,0 +1,25 @@
+.column-right-auth {
+	&__links {
+		display: flex;
+		margin-bottom: 25px;
+	}
+	&__link-menu {
+		margin-right: 20px;
+		font-size: 30px;
+		font-weight: 700;
+		color: aliceblue;
+		transition: color 0.3s ease 0s;
+		&:last-child {
+			margin-right: 0px;
+		}
+		&.active {
+			color: $basicPurple;
+		}
+		&:hover {
+			color: $darkGrayColor;
+			&.active {
+				color: $basicPurple;
+			}
+		}
+	}
+}

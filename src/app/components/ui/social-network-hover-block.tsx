@@ -12,7 +12,7 @@ const SocialNetworkHoverBlock = ({ title, data }: ISocialNetworkHoverBlockProps)
 			<div className='hover-block-social-network__title'>{title}</div>
 			<div className='hover-block-social-network__container-row'>
 				{data.map(({ _id, path, text, altIcon, icon, title }: IMainMenuElement) => {
-					return <LinkMenu classesParent='hover-block-social-network' key={_id} type='a:href' icon={icon} altIcon={altIcon} text={text} path={path} title={title} />;
+					return <LinkMenu isImg={true} classesParent='hover-block-social-network' key={_id} type='a:href' icon={icon} altIcon={altIcon} text={text} path={path} title={title} />;
 				})}
 			</div>
 		</div>
