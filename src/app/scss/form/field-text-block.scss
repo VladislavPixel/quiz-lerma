@@ -1,0 +1,52 @@
+.field-text-block {
+   &__field {
+      width: 100%;
+      font-size: 17px;
+      &::placeholder {
+         color: $darkGrayColor;
+      }
+      color: aliceblue;
+   }
+   &__label {
+      color: aliceblue;
+      font-size: 16px;
+      margin-bottom: 7px;
+      display: block;
+   }
+   &__input-wrapper {
+      padding: 15px 46px 15px 37px;
+      box-shadow: $blackShadow;
+      background-color: $transparentSilver;
+      border-radius: $borderRadiusBasic;
+      position: relative;
+   }
+   &__icon {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      z-index: 300;
+      top: 50%;
+      left: 7px;
+      transform: translateY(-50%);
+   }
+   &__eye-wrap {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      top: 50%;
+      right: 7px;
+      z-index: 300;
+      transform: translateY(-50%);
+      border-radius: $borderRadiusBasic;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $basicPurple;
+      box-shadow: $blackShadow;
+      cursor: pointer;
+   }
+   &__eye-password {
+      width: 25px;
+      height: 25px;
+   }
+}

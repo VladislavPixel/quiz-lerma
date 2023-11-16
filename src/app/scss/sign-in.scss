@@ -7,4 +7,11 @@
 			box-shadow: $blackShadow;
 		}
 	}
+	&__text-field {
+		margin-bottom: 25px;
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
 }
