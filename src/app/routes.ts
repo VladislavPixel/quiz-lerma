@@ -1,5 +1,21 @@
 import type { MainMenu, IMainMenuElement, IHoverMenu } from './type/main-menu';
 
+// ПРИ СОЗДАНИИ НОВЫХ ПУТЕЙ И ДОБАВЛЕНИИ ИХ В ПРИЛОЖЕНИЕ НУЖНО НЕ ЗАБЫВАТЬ ДОБАВЛЯТЬ НОВЫЙ ПУТЬ В ЭТОТ МАССИВ
+// ПЕРВЫМИ В МАССИВЕ ИДУТ НАИБОЛЕЕ КОНКРЕТИЗИРОВАННЫЕ МАРШРУТЫ, ЭТО ДЕЛАЕТСЯ ДЛЯ КОРРЕКТНОЙ РАБОТЫ Navigation, КОГДА ОН ДЕЛАЕТ ВОЗВРАТ НАЗАД
+export const allPathsRouter = [
+	'/create-test',
+	'/search',
+	'/tests',
+	'/rating',
+	'/about-us',
+	'/news-from-developers',
+	'/merch-box',
+	'/registration',
+	'/sign-in',
+	'/password-recovery',
+	'/'
+];
+
 export const createRoute: IMainMenuElement = {
 	_id: 66,
 	text: 'Создать',

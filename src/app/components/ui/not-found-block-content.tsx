@@ -1,14 +1,17 @@
 import { Btn } from '../common/btn';
 import { HrElement } from '../common/hr-element';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { getMaximumMatchPathRouter } from '../../utils/get-maximum-match-path-router';
 
 const NotFoundBlockContent = () => {
 	const navigate = useNavigate();
 
-	console.log(useLocation(), "Локация");
+	const { pathname } = useLocation();
 
 	const handlerBackClick = (): void => {
-		console.log("Назад");
+		const correctPath = getMaximumMatchPathRouter(pathname);
+
+		navigate(correctPath);
 	};
 
 	const handlerToMainPage = (): void => {
@@ -22,7 +25,7 @@ const NotFoundBlockContent = () => {
 					<span>4</span>0<span>4</span>
 				</p>
 			</div>
-			<div className='not-found__column'>
+			<div className='not-found__column not-found__column_right'>
 				<img className='not-found__img' src='./assets/images/icons/witch.svg' alt='Иконка ведьмы, которая летит на метле.' />
 				<h2 className='not-found__title'>Страница не найдена</h2>
 				<p className='not-found__sub-title'>Возможно такая страница на нашем сервисе появится позже, но пока что она не существует. Предлагаем Вам воспользоваться одной из кнопок, которые расположены ниже.</p>

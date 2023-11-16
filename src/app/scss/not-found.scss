@@ -8,7 +8,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 20px;
+		padding: 40px;
 		position: relative;
 	}
 	&__cat-element {
@@ -51,7 +51,7 @@
 		line-height: 130%;
 	}
 	&__message-number {
-		color: aliceblue;
+		color: $darkGrayColor;
 		font-size: 170px;
 		display: flex;
 		align-items: flex-end;
