@@ -1,20 +1,30 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 interface ITextField {
 	placeholder: string;
 	name: string;
 	label: string;
-	classesParent: string;
-	type: string;
-	onChange: () => any;
+	classesParent?: string;
+	type?: string;
+	onChange?: (data: any) => any;
 	iconName?: string;
+	value?: string;
 };
 
-const TextField = ({ placeholder, name, label, classesParent, type, iconName }: ITextField) => {
+const TextField = ({ placeholder, name, label, classesParent, type, iconName, onChange, value }: ITextField) => {
 	const [isShow, setShow] = useState<boolean>(false);
 
-	const handlerChange = (event: any) => {
-		console.log(event, "EVENT");
+	const handlerChange = (event: ChangeEvent<HTMLInputElement>) => {
+		event.preventDefault();
+
+		const result = {
+			key: name,
+			value: event.target.value
+		};
+
+		if (typeof onChange === 'function') {
+			onChange(result);
+		}
 	};
 
 	const handlerClickIconShow = () => {
@@ -34,7 +44,7 @@ const TextField = ({ placeholder, name, label, classesParent, type, iconName }: 
 			<div className='field-text-block__container'>
 				<label title="Нажмите, чтобы установить указатель на элемент." htmlFor={name} className='field-text-block__label'>{label}</label>
 				<div className='field-text-block__input-wrapper'>
-					<input title='Поле ввода.' className='field-text-block__field' onChange={handlerChange} type={correctType} id={name} name={name} placeholder={placeholder} />
+					<input value={value} title='Поле ввода.' className='field-text-block__field' onChange={handlerChange} type={correctType} id={name} name={name} placeholder={placeholder} />
 					{isIconName &&
 						<img src={`./assets/images/icons/${iconName}`} alt={`Иконка поля - ${label}.`} className='field-text-block__icon' />
 					}
