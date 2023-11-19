@@ -7,42 +7,19 @@ import { navigationSignInPage } from '../../routes';
 import { TextField } from '../common/form/text-field';
 import { FormComponent } from '../common/form/form-component';
 
-
-interface CustomElementsSignIn extends HTMLFormControlsCollection {
-	login: HTMLInputElement;
-	password: HTMLInputElement;
-};
-
-interface CustomFormSignIn extends HTMLFormElement {
-  readonly elements: CustomElementsSignIn;
-}
-
-interface IDataFormSignIn {
-	login: '';
-	password: '';
+interface IDataForm extends Record<PropertyKey, string> {
+	login: string;
+	password: string;
 };
 
 const SignInPage = () => {
-	const [dataForm, setDataForm] = useState({
+	const [dataForm] = useState<IDataForm>({
 		login: '',
 		password: ''
 	});
 
-	const handlerChangeField = (data: any) => {
-		setDataForm((prevState) => ({ ...prevState, [data.key]: data.value }));
-	};
-
-	const handlerSubmit = (event: React.FormEvent<CustomFormSignIn>) => {
-		event.preventDefault();
-
-		const target = event.currentTarget.elements;
-
-		const result = {
-			login: target.login.value,
-			password: target.password.value
-		};
-
-		console.log(result, "RESULT submit form sign-in");
+	const handlerSubmit = (result: IDataForm): void => {
+		console.log(result, "Результат, который пришел из формы");
 	};
 
 	return (
@@ -51,16 +28,10 @@ const SignInPage = () => {
 				<LeftColumnAuth {...auxiliaryData.signInPage} classesParent='sign-in' />
 				<RightColumnAuth navigationIter={navigationSignInPage} classesParent='sign-in'>
 					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='sign-in'>
-						fghfgh
 						<TextField placeholder='Укажите *логин*' name='login' label='Логин:' iconName='login.svg' />
 						<TextField placeholder='Укажите *пароль*' name='password' label='Пароль:' iconName='password.svg' type='password' />
-						<button>Вход</button>
+						<button title='Нажмите, чтобы отправить данные на авторизацию.' className='btn button-purple'>Вход</button>
 					</FormComponent>
-					{/*<form onSubmit={handlerSubmit} className='sign-in__form'>
-						<TextField value={dataForm.login} iconName='login.svg' type='text' onChange={handlerChangeField} classesParent='sign-in' placeholder='Укажите *логин*' name='login' label='Логин:' />
-						<TextField value={dataForm.password} iconName='password.svg' type='password' onChange={handlerChangeField} classesParent='sign-in' placeholder='Укажите *пароль*' name='password' label='Пароль:' />
-						<button type='submit' title='Нажмите, чтобы отправить данные на авторизацию.' className='sign-in__sub-btn btn button-purple'>Вход</button>
-					</form>*/}
 				</RightColumnAuth>
 			</React.Fragment>
 		</Skeleton>
