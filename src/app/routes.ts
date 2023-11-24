@@ -1,5 +1,7 @@
 import type { MainMenu, IMainMenuElement, IHoverMenu } from './type/main-menu';
 
+export const PASSWORD_RECOVERY_PATH = '/password-recovery';
+
 // ПРИ СОЗДАНИИ НОВЫХ ПУТЕЙ И ДОБАВЛЕНИИ ИХ В ПРИЛОЖЕНИЕ НУЖНО НЕ ЗАБЫВАТЬ ДОБАВЛЯТЬ НОВЫЙ ПУТЬ В ЭТОТ МАССИВ
 // ПЕРВЫМИ В МАССИВЕ ИДУТ НАИБОЛЕЕ КОНКРЕТИЗИРОВАННЫЕ МАРШРУТЫ, ЭТО ДЕЛАЕТСЯ ДЛЯ КОРРЕКТНОЙ РАБОТЫ Navigation, КОГДА ОН ДЕЛАЕТ ВОЗВРАТ НАЗАД
 export const allPathsRouter = [
@@ -12,7 +14,7 @@ export const allPathsRouter = [
 	'/merch-box',
 	'/registration',
 	'/sign-in',
-	'/password-recovery',
+	PASSWORD_RECOVERY_PATH,
 	'/'
 ];
 

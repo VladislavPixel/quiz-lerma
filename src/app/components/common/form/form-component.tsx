@@ -8,10 +8,6 @@ interface IFormComponentProps<T> {
 	onSubmit: (data: T) => void;
 };
 
-interface IResultCheckChildIterable {
-	isIterable: boolean;
-};
-
 function FormComponent<T extends Record<PropertyKey, string>>({ children, data, classesParent, onSubmit }: IFormComponentProps<T>) {
 	const [formState, setFormState] = useState(data || {});
 
@@ -25,37 +21,40 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 		onSubmit(formState);
 	};
 
-	function checkChildIterable<T extends Record<PropertyKey, any>>(value: T): IResultCheckChildIterable {
-		if (!value[Symbol.iterator]) {
-			return { isIterable: true };
+	function isIterable(value: Record<PropertyKey, any>): value is Iterable<unknown> {
+		const isObj = typeof value === 'object' && value !== null;
+
+		if (isObj && value[Symbol.iterator] && typeof value[Symbol.iterator] === 'function') {
+			return true;
 		}
 
-		return { isIterable: false };
+		return false;
 	};
 
 	const newChildren = Children.map(children, (child) => {
-		if (child && typeof child === 'object') {
-			let value: React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal = child;
-
+		if (child && typeof child === 'object' && !isIterable(child)) {
 			let props = {};
 
-			if (checkChildIterable(value[Symbol.iterator])) {
-				if (value.type === 'button') {
-					const isSubmitBtn = value.props.type === undefined || value.props.type === 'submit';
+			if (child.type === 'button') {
+				const isSubmitBtn = child.props.type === undefined || child.props.type === 'submit';
 
-					props = {
-						...value.props,
-						type: isSubmitBtn ? 'submit' : 'button',
-						className: `${classesParent}__sub-btn ${value.props.className ? value.props.className : ''}`
-					}
-				} else {
-					props = {
-						...value.props,
-						value: formState[value.props.name],
+				props = {
+					...child.props,
+					type: isSubmitBtn ? 'submit' : 'button',
+					className: `${classesParent}__sub-btn ${child.props.className ? child.props.className : ''}`
+				};
+			} else {
+				props = child.props.typeElement === 'skip' ?
+					{
+						...child.props,
+						classesParent
+					} :
+					{
+						...child.props,
+						value: formState[child.props.name],
 						classesParent,
 						onChange: handlerChange
 					};
-				}
 			}
 
 			return cloneElement(child, props);

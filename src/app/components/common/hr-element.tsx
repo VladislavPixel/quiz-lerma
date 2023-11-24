@@ -1,5 +1,6 @@
 interface IHrElementProps {
 	isShow: boolean;
+	typeElement?: string;
 };
 
 const HrElement = ({ isShow }: IHrElementProps) => {

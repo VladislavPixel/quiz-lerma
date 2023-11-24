@@ -3,9 +3,11 @@ import { Skeleton } from '../common/skeleton';
 import { LeftColumnAuth } from '../ui/left-column-auth';
 import { RightColumnAuth } from '../ui/right-column-auth';
 import auxiliaryData from '../../auxiliary-data.json';
-import { navigationSignInPage } from '../../routes';
+import { navigationSignInPage, PASSWORD_RECOVERY_PATH } from '../../routes';
 import { TextField } from '../common/form/text-field';
 import { FormComponent } from '../common/form/form-component';
+import { ContainerLink } from '../common/container-link';
+import { HrElement } from '../common/hr-element';
 
 interface IDataForm extends Record<PropertyKey, string> {
 	login: string;
@@ -30,6 +32,8 @@ const SignInPage = () => {
 					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='sign-in'>
 						<TextField placeholder='Укажите *логин*' name='login' label='Логин:' iconName='login.svg' />
 						<TextField placeholder='Укажите *пароль*' name='password' label='Пароль:' iconName='password.svg' type='password' />
+						<ContainerLink icon='./assets/images/icons/recovery-password.svg' altIcon='Иконка восстановления пароля.' text='Забыли пароль?' path={PASSWORD_RECOVERY_PATH} typeElement='skip' title='Нажмите, чтобы перейти на страницу восстановления пароля.' />
+						<HrElement isShow={true} typeElement='skip' />
 						<button title='Нажмите, чтобы отправить данные на авторизацию.' className='btn button-purple'>Вход</button>
 					</FormComponent>
 				</RightColumnAuth>

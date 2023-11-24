@@ -13,5 +13,17 @@
 	&__form-component {
 		display: flex;
 		flex-direction: column;
+		hr {
+			margin: 20px 0px;
+		}
+	}
+	&__link-menu {
+		color: aliceblue;
+		text-decoration: underline dotted aliceblue;
+		transition: color 0.3s ease 0s, text-decoration 0.3s ease 0s;
+		&:hover {
+			color: $basicPurple;
+			text-decoration: underline dotted $basicPurple;
+		}
 	}
 }
