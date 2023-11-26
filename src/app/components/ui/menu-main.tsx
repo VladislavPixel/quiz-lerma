@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import type { MainMenu, IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from '../common/link-menu';
 import { HoverMenu } from '../common/hover-menu';
@@ -10,7 +11,7 @@ interface IMenuMainProps {
 	data: MainMenu;
 };
 
-const MenuMain = ({ classesParent, data }: IMenuMainProps) => {
+const MenuMain: FC<IMenuMainProps> = ({ classesParent, data }) => {
 	const lastElement = data[data.length - 1];
 
 	return (

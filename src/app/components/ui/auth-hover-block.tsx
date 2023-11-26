@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { Btn } from '../common/btn';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ interface IAuthHoverBlockProps {
 	data: IMainMenuElement[];
 };
 
-const AuthHoverBlock = ({ title, data }: IAuthHoverBlockProps) => {
+const AuthHoverBlock: FC<IAuthHoverBlockProps> = ({ title, data }) => {
 	const navigate = useNavigate();
 
 	return (

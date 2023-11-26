@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from "../common/link-menu";
 
@@ -6,7 +7,7 @@ interface ISocialNetworkHoverBlockProps {
 	data: IMainMenuElement[];
 };
 
-const SocialNetworkHoverBlock = ({ title, data }: ISocialNetworkHoverBlockProps) => {
+const SocialNetworkHoverBlock: FC<ISocialNetworkHoverBlockProps> = ({ title, data }) => {
 	return (
 		<div className='hover-block-social-network'>
 			<div className='hover-block-social-network__title'>{title}</div>

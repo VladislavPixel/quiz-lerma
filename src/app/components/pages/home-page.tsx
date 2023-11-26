@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { HeadMessageLove } from '../common/head-message-love';
 import { HeadTitle } from '../common/head-title';
 import { Footer } from '../common/footer';
@@ -6,7 +6,7 @@ import { Skeleton } from '../common/skeleton';
 import { Header } from '../common/header';
 import { ContentWrapper } from '../common/content-wrapper';
 
-const HomePage = () => {
+const HomePage: FC = () => {
 	return (
 		<Skeleton isSidebar={true} classesParent='home-block'>
 			<React.Fragment>

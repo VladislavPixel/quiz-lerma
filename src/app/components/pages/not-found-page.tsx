@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Skeleton } from '../common/skeleton';
 import { Footer } from '../common/footer';
 import { Header } from '../common/header';
@@ -6,7 +6,7 @@ import { HeadMessageLove } from '../common/head-message-love';
 import { ContentWrapper } from '../common/content-wrapper';
 import { NotFoundBlockContent } from '../ui/not-found-block-content';
 
-const NotFoundPage = () => {
+const NotFoundPage: FC = () => {
 	return (
 		<Skeleton isSidebar={true} classesParent='not-found'>
 			<React.Fragment>

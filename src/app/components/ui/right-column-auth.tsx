@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from '../common/link-menu';
 
@@ -7,7 +8,7 @@ interface IRightColumnAuthProps {
 	children: React.ReactNode;
 };
 
-const RightColumnAuth = ({ classesParent, navigationIter, children }: IRightColumnAuthProps) => {
+const RightColumnAuth: FC<IRightColumnAuthProps> = ({ classesParent, navigationIter, children }) => {
 	return (
 		<div className={`${classesParent}__column column-right-auth column-auth`}>
 			<div className='column-right-auth__block'>

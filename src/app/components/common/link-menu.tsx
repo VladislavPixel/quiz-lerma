@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 interface ILinkMenuProps {
@@ -11,7 +12,7 @@ interface ILinkMenuProps {
 	isImg: boolean;
 };
 
-const LinkMenu = ({ classesParent, path, title, icon, altIcon, text, type, isImg }: ILinkMenuProps) => {
+const LinkMenu: FC<ILinkMenuProps> = ({ classesParent, path, title, icon, altIcon, text, type, isImg }) => {
 	return (
 		type === 'NavLink' ?
 		<NavLink className={`${classesParent}__link-menu`} to={path} title={title}>

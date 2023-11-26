@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import { HomePage } from '../components/pages/home-page';
 
-const Home = () => {
+const Home: FC = () => {
 	return <HomePage />;
 };
 

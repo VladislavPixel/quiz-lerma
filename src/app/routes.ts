@@ -1,6 +1,11 @@
 import type { MainMenu, IMainMenuElement, IHoverMenu } from './type/main-menu';
 
 export const PASSWORD_RECOVERY_PATH = '/password-recovery';
+export const SIGN_IN_PATH = '/sign-in';
+export const REGISTRATION_PATH = '/registration';
+export const HOME_PATH = '/';
+export const NOT_FOUND_PATH = '*';
+
 
 // ПРИ СОЗДАНИИ НОВЫХ ПУТЕЙ И ДОБАВЛЕНИИ ИХ В ПРИЛОЖЕНИЕ НУЖНО НЕ ЗАБЫВАТЬ ДОБАВЛЯТЬ НОВЫЙ ПУТЬ В ЭТОТ МАССИВ
 // ПЕРВЫМИ В МАССИВЕ ИДУТ НАИБОЛЕЕ КОНКРЕТИЗИРОВАННЫЕ МАРШРУТЫ, ЭТО ДЕЛАЕТСЯ ДЛЯ КОРРЕКТНОЙ РАБОТЫ Navigation, КОГДА ОН ДЕЛАЕТ ВОЗВРАТ НАЗАД
@@ -12,10 +17,10 @@ export const allPathsRouter = [
 	'/about-us',
 	'/news-from-developers',
 	'/merch-box',
-	'/registration',
-	'/sign-in',
+	REGISTRATION_PATH,
+	SIGN_IN_PATH,
 	PASSWORD_RECOVERY_PATH,
-	'/'
+	HOME_PATH
 ];
 
 export const createRoute: IMainMenuElement = {
@@ -36,7 +41,7 @@ export const socialNetworkIterable: IMainMenuElement[] = [
 export const logoRoute: IMainMenuElement = {
 	_id: 11,
 	text: 'QuizLerma',
-	path: '/',
+	path: HOME_PATH,
 	icon: './assets/images/icons/magic-hat-v.svg',
 	altIcon: 'Иконка сервиса - QuizLerma: волшебная шляпа фиолетового цвета.',
 	title: 'Нажмите, чтобы перейти на главную страницу или воспользуйтесь выпадающим меню.',
@@ -46,9 +51,9 @@ export const logoRoute: IMainMenuElement = {
 	}
 };
 
-const registrationRoute: IMainMenuElement = { _id: 200, text: 'Регистрация', path: '/registration', icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' };
+const registrationRoute: IMainMenuElement = { _id: 200, text: 'Регистрация', path: REGISTRATION_PATH, icon: './assets/images/icons/registration.svg', altIcon: 'Иконка регистрации - лист бумаги с пунктами и карандаш.', title: 'Нажмите, чтобы перейти на страницу регистрации.' };
 
-const signInRoute: IMainMenuElement = { _id: 201, text: 'Войти', path: '/sign-in', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' };
+const signInRoute: IMainMenuElement = { _id: 201, text: 'Войти', path: SIGN_IN_PATH, icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу входа.' };
 
 const passwordRecoveryRouter: IMainMenuElement = { _id: 202, text: 'Восстановление', path: '/password-recovery', icon: './assets/images/icons/user-sign-in.svg', altIcon: 'Иконка войти на сайт - пользователь и стрелка, символизирующая вход в систему.', title: 'Нажмите, чтобы перейти на страницу восстановления пароля.' };
 
@@ -67,7 +72,7 @@ export const hoverMenuDataForAuth: IHoverMenu = {
 export const authRoute: IMainMenuElement = {
 	_id: 100,
 	text: 'Авторизация',
-	path: '/sign-in',
+	path: SIGN_IN_PATH,
 	icon: './assets/images/icons/user.svg',
 	altIcon: 'Иконка пользователя.',
 	title: 'Нажмите, чтобы перейти на страницу входа или воспользуйтесь выпадающим меню.',
@@ -77,7 +82,7 @@ export const authRoute: IMainMenuElement = {
 const routesData: MainMenu = [
 	logoRoute,
 	{ _id: 22, text: 'Поиск', path: '/search', icon: './assets/images/icons/search.svg', altIcon: 'Иконка поиска - лупа.', title: 'Нажмите, чтобы перейти на страницу поиска по сайту.' },
-	{ _id: 33, text: 'Главная', path: '/', icon: './assets/images/icons/home.svg', altIcon: 'Иконка домашней страницы - домик.', title: 'Нажмите, чтобы перейти на главную страницу.' },
+	{ _id: 33, text: 'Главная', path: HOME_PATH, icon: './assets/images/icons/home.svg', altIcon: 'Иконка домашней страницы - домик.', title: 'Нажмите, чтобы перейти на главную страницу.' },
 	{ _id: 44, text: 'Тесты / Задания', path: '/tests', icon: './assets/images/icons/tests.svg', altIcon: 'Иконка страницы с тестами - тестовый лист.', title: 'Нажмите, чтобы перейти на страницу с тестами/заданиями.' },
 	{ _id: 55, text: 'Рейтинг', path: '/rating', icon: './assets/images/icons/star.svg', altIcon: 'Иконка страницы с рейтингами - звезда.', title: 'Нажмите, чтобы перейти на страницу с рейтингом.' },
 	createRoute,

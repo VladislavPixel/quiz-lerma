@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import { createRoute } from '../../routes';
 import type { IMainMenuElement } from "../../type/main-menu";
@@ -8,7 +9,7 @@ interface IHeadTitleProps {
 
 const { path, title }: IMainMenuElement = createRoute;
 
-const HeadTitle = ({ classesParent }: IHeadTitleProps) => {
+const HeadTitle: FC<IHeadTitleProps> = ({ classesParent }) => {
 	return (
 		<div title='К вашему сведению :)' className={`${classesParent}__head-title title-head-block`}>
 			<h1 className='title-head-block__name'>Тесты / задачи на любой вкус!</h1>

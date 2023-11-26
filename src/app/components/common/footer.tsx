@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { logoRoute, routesData } from '../../routes';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from './link-menu';
@@ -10,7 +11,7 @@ interface IFooterProps {
 
 const { path, icon, altIcon, text }: IMainMenuElement = logoRoute;
 
-const Footer = ({ classesParent }: IFooterProps) => {
+const Footer: FC<IFooterProps> = ({ classesParent }) => {
 	const date: Date = new Date();
 
 	const currentYear: number = date.getFullYear();

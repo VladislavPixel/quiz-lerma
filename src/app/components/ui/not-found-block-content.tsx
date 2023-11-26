@@ -1,9 +1,10 @@
+import { FC } from 'react';
 import { Btn } from '../common/btn';
 import { HrElement } from '../common/hr-element';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { getMaximumMatchPathRouter } from '../../utils/get-maximum-match-path-router';
 
-const NotFoundBlockContent = () => {
+const NotFoundBlockContent: FC = () => {
 	const navigate = useNavigate();
 
 	const { pathname } = useLocation();

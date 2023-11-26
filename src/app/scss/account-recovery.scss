@@ -1,4 +1,4 @@
-.registration {
+.account-recovery {
 	&__column {
 		flex: 0 1 50%;
 		background-color: $darkBlueBackgroundColor;
@@ -7,6 +7,9 @@
 			box-shadow: $blackShadow;
 		}
 	}
+	&__text-field {
+		margin-bottom: 25px;
+	}
 	&__form-component {
 		display: flex;
 		flex-direction: column;
@@ -14,7 +17,8 @@
 			margin: 20px 0px;
 		}
 	}
-	&__text-field {
-		margin-bottom: 15px;
+	&__small-message {
+		max-width: 500px;
+		text-align: right;
 	}
 }

@@ -8,7 +8,7 @@ interface IFormComponentProps<T> {
 	onSubmit: (data: T) => void;
 };
 
-function FormComponent<T extends Record<PropertyKey, string>>({ children, data, classesParent, onSubmit }: IFormComponentProps<T>) {
+function FormComponent<T extends Record<PropertyKey, string | boolean>>({ children, data, classesParent, onSubmit }: IFormComponentProps<T>) {
 	const [formState, setFormState] = useState(data || {});
 
 	const handlerChange = ({ key, value }: IDataPropsChangeForm): void => {

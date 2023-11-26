@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import { Skeleton } from '../common/skeleton';
 import { LeftColumnAuth } from '../ui/left-column-auth';
 import { RightColumnAuth } from '../ui/right-column-auth';
@@ -14,7 +14,7 @@ interface IDataForm extends Record<PropertyKey, string> {
 	password: string;
 };
 
-const SignInPage = () => {
+const SignInPage: FC = () => {
 	const [dataForm] = useState<IDataForm>({
 		login: '',
 		password: ''

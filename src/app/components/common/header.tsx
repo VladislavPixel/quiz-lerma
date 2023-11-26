@@ -1,9 +1,11 @@
+import { FC } from 'react';
+
 interface IHeaderProps {
 	children: React.ReactNode;
 	classesParent: string;
 };
 
-const Header = ({ children, classesParent }: IHeaderProps) => {
+const Header: FC<IHeaderProps> = ({ children, classesParent }) => {
 	return (
 		<header className={`${classesParent}__header header`}>
 			{children}

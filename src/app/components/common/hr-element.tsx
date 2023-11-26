@@ -1,9 +1,11 @@
+import { FC } from 'react';
+
 interface IHrElementProps {
 	isShow: boolean;
 	typeElement?: string;
 };
 
-const HrElement = ({ isShow }: IHrElementProps) => {
+const HrElement: FC<IHrElementProps> = ({ isShow }) => {
 	if (isShow) {
 		return <hr className="hr" />;
 	}

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, FC } from 'react';
 import type { IDataPropsChangeForm } from '../../../type/form';
 
 interface ITextField {
@@ -12,7 +12,7 @@ interface ITextField {
 	value?: string;
 };
 
-const TextField = ({ placeholder, name, label, classesParent, type, iconName, onChange, value }: ITextField) => {
+const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, type, iconName, onChange, value }) => {
 	const [isShow, setShow] = useState<boolean>(false);
 
 	const handlerChange = (event: ChangeEvent<HTMLInputElement>): void => {

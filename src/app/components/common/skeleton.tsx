@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Sidebar } from './sidebar';
 import { MenuMain } from '../ui/menu-main';
 import { routesData } from '../../routes';
@@ -8,7 +9,7 @@ interface ISkeletonProps {
 	classesParent: string;
 };
 
-const Skeleton = ({ isSidebar, children, classesParent }: ISkeletonProps) => {
+const Skeleton: FC<ISkeletonProps> = ({ isSidebar, children, classesParent }) => {
 	const stylesForBlockContent = {
 		width: '100%',
 		height: '100%',

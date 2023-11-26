@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import type { IContentAuthPageData } from '../../type/content-auth-page';
 import { ElementParagraph } from './element-paragraph';
 
@@ -5,7 +6,7 @@ type ILeftColumnAuthProps =  {
 	classesParent: string;
 } & IContentAuthPageData;
 
-const LeftColumnAuth = ({ title, titleHover, subTitle, iconName, altIcon, points, classesParent }: ILeftColumnAuthProps) => {
+const LeftColumnAuth: FC<ILeftColumnAuthProps> = ({ title, titleHover, subTitle, iconName, altIcon, points, classesParent }) => {
 	const isParagraphs = points && points.length !== 0;
 
 	return (
