@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import { logoRoute, routesData } from '../../routes';
+import { logoRoute, routesData, ADVERTISEMENT_PATH, socialNetworkIterable } from '../../routes';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from './link-menu';
 import { Link } from 'react-router-dom';
-import { socialNetworkIterable } from '../../routes';
 
 interface IFooterProps {
 	classesParent: string;
@@ -51,7 +50,7 @@ const Footer: FC<IFooterProps> = ({ classesParent }) => {
 						<div className='block-footer__advertisement advertisement-footer'>
 							<img title='Наш сервис является популярным. Вы сможете протрубить на весь интернет о себе.' className='advertisement-footer__icon' src='./assets/images/icons/mouthpiece.svg' alt='Иконка рупора.' />
 							<span title='На случай, если вы хотите с нами сотрудничать.' className='advertisement-footer__text'>Реклама на этом сайте:</span>
-							<Link className='advertisement-footer__link' to='/advertisement' title='Нажмите, чтобы перейти на страницу рекламы и ознакомиться с нашими условиями.'>здесь!</Link>
+							<Link className='advertisement-footer__link' to={ADVERTISEMENT_PATH} title='Нажмите, чтобы перейти на страницу рекламы и ознакомиться с нашими условиями.'>здесь!</Link>
 						</div>
 					</div>
 				</div>

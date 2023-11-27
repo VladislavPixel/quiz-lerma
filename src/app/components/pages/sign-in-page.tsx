@@ -30,8 +30,8 @@ const SignInPage: FC = () => {
 				<LeftColumnAuth {...auxiliaryData.signInPage} classesParent='sign-in' />
 				<RightColumnAuth navigationIter={navigationSignInPage} classesParent='sign-in'>
 					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='sign-in'>
-						<TextField placeholder='Укажите *логин*' name='login' label='Логин:' iconName='login.svg' />
-						<TextField placeholder='Укажите *пароль*' name='password' label='Пароль:' iconName='password.svg' type='password' />
+						<TextField placeholder='Укажите "логин"' name='login' label='Логин:' iconName='login.svg' />
+						<TextField placeholder='Укажите "пароль"' name='password' label='Пароль:' iconName='password.svg' type='password' />
 						<ContainerLink icon='./assets/images/icons/recovery-password.svg' altIcon='Иконка восстановления пароля.' text='Забыли пароль?' path={PASSWORD_RECOVERY_PATH} typeElement='skip' title='Нажмите, чтобы перейти на страницу восстановления пароля.' />
 						<HrElement isShow={true} typeElement='skip' />
 						<button title='Нажмите, чтобы отправить данные на авторизацию.' className='btn button-purple'>Вход</button>

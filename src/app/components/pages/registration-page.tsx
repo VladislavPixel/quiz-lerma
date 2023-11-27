@@ -8,9 +8,9 @@ import { FormComponent } from '../common/form/form-component';
 import { TextField } from '../common/form/text-field';
 import { HrElement } from '../common/hr-element';
 import { CheckboxField } from '../common/form/checkbox-field';
+import { RulesPoliciesBlock } from '../ui/rules-policies-block';
 
-
-interface IDataForm extends Record<PropertyKey, string | boolean> {
+interface IDataForm extends Record<PropertyKey, string> {
 	name: string;
 	surname: string;
 	login: string;
@@ -19,7 +19,7 @@ interface IDataForm extends Record<PropertyKey, string | boolean> {
 	repeatPassword: string;
 	keyPhrase: string;
 	aboutMe: string
-	userAgreement: boolean;
+	userAgreement: string;
 };
 
 const RegistrationPage: FC = () => {
@@ -32,7 +32,7 @@ const RegistrationPage: FC = () => {
 		repeatPassword: '',
 		keyPhrase: '',
 		aboutMe: '',
-		userAgreement: false
+		userAgreement: 'false'
 	});
 
 	const handlerSubmit = (result: IDataForm): void => {
@@ -45,15 +45,16 @@ const RegistrationPage: FC = () => {
 				<LeftColumnAuth {...auxiliaryData.registrationPage} classesParent='registration' />
 				<RightColumnAuth navigationIter={navigationSignInPage} classesParent='registration'>
 					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='registration'>
-						<TextField placeholder='Укажите *имя*' name='name' label='Имя:' iconName='name.svg' />
-						<TextField placeholder='Укажите *фамилию*' name='surname' label='Фамилия:' iconName='surname.svg' />
-						<TextField placeholder='Укажите *логин*' name='login' label='Логин:' iconName='login.svg' />
-						<TextField placeholder='Укажите *почту*' name='email' label='Почта:' iconName='email.svg' />
-						<TextField placeholder='Укажите *пароль*' name='password' label='Пароль:' iconName='password.svg' type='password' />
-						<TextField placeholder='*Пароль* для сверки' name='repeatPassword' label='Повторите пароль:' iconName='repeat-password.svg' type='password' />
-						<TextField placeholder='Укажите *фразу-ключ*' name='keyPhrase' label='Фраза-ключ для восстановления уч. записи (важно):' iconName='key.svg' />
-						<TextField placeholder='Укажите *о себе*' name='aboutMe' label='О себе кратко:' iconName='about-me.svg' />
-						<CheckboxField />
+						<TextField placeholder='Укажите "имя"' name='name' label='Имя:' iconName='name.svg' />
+						<TextField placeholder='Укажите "фамилию"' name='surname' label='Фамилия:' iconName='surname.svg' />
+						<TextField placeholder='Укажите "логин"' name='login' label='Логин:' iconName='login.svg' />
+						<TextField placeholder='Укажите "почту"' name='email' label='Почта:' iconName='email.svg' />
+						<TextField placeholder='Укажите "пароль"' name='password' label='Пароль:' iconName='password.svg' type='password' />
+						<TextField placeholder='"Пароль" для сверки' name='repeatPassword' label='Повторите пароль:' iconName='repeat-password.svg' type='password' />
+						<TextField placeholder='Укажите "фразу-ключ"' name='keyPhrase' label='Фраза-ключ для восстановления уч. записи (важно):' iconName='key.svg' />
+						<TextField placeholder='Укажите "о себе"' name='aboutMe' label='О себе кратко:' iconName='about-me.svg' />
+						<CheckboxField label='Принять пользовательское соглашение.' name='userAgreement' />
+						<RulesPoliciesBlock typeElement='skip' title='Регистрируясь вы соглашаетесь с:' />
 						<HrElement isShow={true} typeElement='skip' />
 						<button title='Нажмите, чтобы отправить данные на регистрацию.' className='btn button-purple'>Зарегистрироваться</button>
 					</FormComponent>

@@ -30,8 +30,8 @@ const AccountRecoveryPage: FC = () => {
 				<LeftColumnAuth {...auxiliaryData.accountRecoveryPage} classesParent='account-recovery' />
 				<RightColumnAuth navigationIter={navigationPassowrdRecovery} classesParent='account-recovery'>
 					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='account-recovery'>
-						<TextField placeholder='Укажите *почту*' name='email' label='Почта:' iconName='email.svg' />
-						<TextField placeholder='Укажите *фразу-ключ*' name='keyPhrase' label='Фраза-ключ для восстановления уч. записи:' iconName='key.svg' />
+						<TextField placeholder='Укажите "почту"' name='email' label='Почта:' iconName='email.svg' />
+						<TextField placeholder='Укажите "фразу-ключ"' name='keyPhrase' label='Фраза-ключ для восстановления уч. записи:' iconName='key.svg' />
 						<MessageSmall typeElement='skip' text='Вам требуется заполнить все поля сверху, после чего нажать кнопку. Новый пароль появится прямо на этом месте, если что-то пойдет не так, напишите нам на почту, которая указана внизу на главной странице.' />
 						<HrElement isShow={true} typeElement='skip' />
 						<button title='Нажмите, чтобы отправить данные на восстановление пароля.' className='btn button-purple'>Выслать новый пароль</button>

@@ -1,0 +1,51 @@
+.rules-policies-block {
+	background-color: $transparentSilver;
+	padding: 10px;
+	border-radius: $borderRadiusBasic;
+	box-shadow: $blackShadow;
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 7px;
+	}
+	&__title {
+		font-size: 20px;
+		color: $darkGrayColor;
+		line-height: 110%;
+		margin-right: 15px;
+	}
+	&__img-container {
+		flex: 0 0 30px;
+		height: 30px;
+		width: 30px;
+		position: relative;
+	}
+	&__icon {
+		position: absolute;
+		width: 170%;
+		height: 170%;
+		z-index: 200;
+		object-fit: cover;
+		top: -37px;
+		left: 7px;
+	}
+	&__links {
+		display: flex;
+		flex-direction: column;
+	}
+	&__li-el {
+		margin-bottom: 10px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	&__link-menu {
+		color: aliceblue;
+		font-size: 16px;
+		transition: color 0.3s ease 0s;
+		&:hover {
+			color: $basicPurple;
+		}
+	}
+}

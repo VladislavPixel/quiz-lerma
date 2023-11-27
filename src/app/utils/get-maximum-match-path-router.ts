@@ -1,17 +1,17 @@
-import { allPathsRouter } from '../routes';
+import { allPathsRouter, HOME_PATH } from '../routes';
 
 function getMaximumMatchPathRouter(path: string): string {
-   let resultPath = '/';
+	let resultPath = HOME_PATH;
 
-   for (const valuePath of allPathsRouter) {
-      if (path.startsWith(valuePath)) {
-         resultPath = valuePath;
+	for (const valuePath of allPathsRouter) {
+		if (path.startsWith(valuePath)) {
+			resultPath = valuePath;
 
-         break;
-      }
-   }
+			break;
+		}
+	}
 
-   return resultPath;
+	return resultPath;
 };
 
 export { getMaximumMatchPathRouter };
