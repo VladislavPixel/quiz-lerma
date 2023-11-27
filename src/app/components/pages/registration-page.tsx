@@ -9,6 +9,8 @@ import { TextField } from '../common/form/text-field';
 import { HrElement } from '../common/hr-element';
 import { CheckboxField } from '../common/form/checkbox-field';
 import { RulesPoliciesBlock } from '../ui/rules-policies-block';
+import type { IConfigData } from '../../type/form';
+import { IS_REQUIRED } from '../../utils/validator';
 
 interface IDataForm extends Record<PropertyKey, string> {
 	name: string;
@@ -32,11 +34,59 @@ const RegistrationPage: FC = () => {
 		repeatPassword: '',
 		keyPhrase: '',
 		aboutMe: '',
-		userAgreement: 'false'
+		userAgreement: ''
 	});
 
 	const handlerSubmit = (result: IDataForm): void => {
 		console.log(result, "Результат, который пришел из формы");
+	};
+
+	const configData: IConfigData = {
+		name: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Имя" является обязательным для заполнения.'
+			}
+		},
+		surname: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Фамилия" является обязательным для заполнения.'
+			}
+		},
+		login: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Логин" является обязательным для заполнения.'
+			}
+		},
+		email: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Почта" является обязательным для заполнения.'
+			}
+		},
+		password: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Пароль" является обязательным для заполнения.'
+			}
+		},
+		repeatPassword: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Повторите пароль" является обязательным для заполнения.'
+			}
+		},
+		keyPhrase: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Фраза-ключ" является обязательным для заполнения.'
+			}
+		},
+		aboutMe: {
+			[IS_REQUIRED]: {
+				message: 'Поле "О себе кратко" является обязательным для заполнения.'
+			}
+		},
+		userAgreement: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Пользовательское соглашение" является обязательным для заполнения.'
+			}
+		}
 	};
 
 	return (
@@ -44,7 +94,7 @@ const RegistrationPage: FC = () => {
 			<React.Fragment>
 				<LeftColumnAuth {...auxiliaryData.registrationPage} classesParent='registration' />
 				<RightColumnAuth navigationIter={navigationSignInPage} classesParent='registration'>
-					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='registration'>
+					<FormComponent configData={configData} onSubmit={handlerSubmit} data={dataForm} classesParent='registration'>
 						<TextField placeholder='Укажите "имя"' name='name' label='Имя:' iconName='name.svg' />
 						<TextField placeholder='Укажите "фамилию"' name='surname' label='Фамилия:' iconName='surname.svg' />
 						<TextField placeholder='Укажите "логин"' name='login' label='Логин:' iconName='login.svg' />

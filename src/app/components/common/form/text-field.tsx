@@ -10,9 +10,10 @@ interface ITextField {
 	classesParent?: string;
 	onChange?: (data: IDataPropsChangeForm) => void;
 	value?: string;
+	error?: string;
 };
 
-const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, type, iconName, onChange, value }) => {
+const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, type, iconName, onChange, value, error }) => {
 	const [isShow, setShow] = useState<boolean>(false);
 
 	const handlerChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -40,6 +41,8 @@ const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, ty
 
 	const correctType = isPassword && isShow ? 'text' : isPassword && !isShow ? 'password' : type === undefined ? 'text' : type;
 
+	const isError = error && typeof error === 'string' && error !== '';
+
 	return (
 		<div className={`${classesParent}__text-field field-text-block`}>
 			<div className='field-text-block__container'>
@@ -55,6 +58,11 @@ const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, ty
 						</div>
 					}
 				</div>
+				{isError &&
+					<div className='field-text-block__error error'>
+						<span>{error}</span>
+					</div>
+				}
 			</div>
 		</div>
 	);

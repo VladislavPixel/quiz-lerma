@@ -8,6 +8,8 @@ import { TextField } from '../common/form/text-field';
 import { FormComponent } from '../common/form/form-component';
 import { ContainerLink } from '../common/container-link';
 import { HrElement } from '../common/hr-element';
+import type { IConfigData } from '../../type/form';
+import { IS_REQUIRED } from '../../utils/validator';
 
 interface IDataForm extends Record<PropertyKey, string> {
 	login: string;
@@ -24,12 +26,25 @@ const SignInPage: FC = () => {
 		console.log(result, "Результат, который пришел из формы");
 	};
 
+	const configData: IConfigData = {
+		login: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Логин" является обязательным для заполнения.'
+			}
+		},
+		password: {
+			[IS_REQUIRED]: {
+				message: 'Поле "Пароль" является обязательным для заполнения.'
+			}
+		}
+	};
+
 	return (
 		<Skeleton isSidebar={true} classesParent='sign-in'>
 			<React.Fragment>
 				<LeftColumnAuth {...auxiliaryData.signInPage} classesParent='sign-in' />
 				<RightColumnAuth navigationIter={navigationSignInPage} classesParent='sign-in'>
-					<FormComponent onSubmit={handlerSubmit} data={dataForm} classesParent='sign-in'>
+					<FormComponent configData={configData} onSubmit={handlerSubmit} data={dataForm} classesParent='sign-in'>
 						<TextField placeholder='Укажите "логин"' name='login' label='Логин:' iconName='login.svg' />
 						<TextField placeholder='Укажите "пароль"' name='password' label='Пароль:' iconName='password.svg' type='password' />
 						<ContainerLink icon='./assets/images/icons/recovery-password.svg' altIcon='Иконка восстановления пароля.' text='Забыли пароль?' path={PASSWORD_RECOVERY_PATH} typeElement='skip' title='Нажмите, чтобы перейти на страницу восстановления пароля.' />
