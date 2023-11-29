@@ -1,4 +1,4 @@
-import type { IConfigData } from '../type/form';
+import type { IConfigData, ISettingData } from '../type/form';
 
 export const IS_REQUIRED = 'isRequired';
 
@@ -22,17 +22,19 @@ function validator<T extends Record<PropertyKey, string>>(config: IConfigData, d
 	};
 
 	Object.keys(config).forEach((key: string): void => { // login  name  password  surname
-		const settingsConfig = config[key];
+		const settingsConfig: ISettingData = config[key];
 
-		Object.keys(settingsConfig).forEach((keySetting): void => { // isRequired
+		const arrKeysSettingsConfig = Object.keys(settingsConfig) as (keyof ISettingData)[];
+
+		arrKeysSettingsConfig.forEach((keySetting): void => { // isRequired  max  min
 			const result = validate(keySetting, key);
 
-			let v = settingsConfig;
-
-			let k = keySetting;
-
 			if (result) {
-				// errorsResult[key] = ...
+				const message = settingsConfig[keySetting]?.message || '';
+
+				if (message) {
+					errorsResult[key] = message;
+				}
 			}
 		});
 	});

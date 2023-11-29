@@ -3,10 +3,12 @@ export interface IDataPropsChangeForm {
 	value: string;
 };
 
+export interface IMessage {
+	message: string;
+};
+
 export interface ISettingData {
-	isRequired?: {
-		message: string;
-	}
+	isRequired?: IMessage;
 };
 
 export interface IConfigData {

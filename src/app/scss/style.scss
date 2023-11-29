@@ -11,6 +11,7 @@ $mainBackgroundColor: #10141B;
 $basicPurple: #514a92;
 $basicDarkPurple: #433C87;
 $blackShadow: 0 0 3px 0px #000;
+$redShadow: 0 0 3px 0px red;
 $darkBlueBackgroundColor: #121925;
 $darkGrayColor: #b1b1b1;
 $blackBackgroundColor: black;
@@ -93,6 +94,13 @@ $transparentSilver: #354046;
 	color: $basicPurple;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
+}
+
+.disabled-btn {
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: 0.3;
+	box-shadow: $redShadow;
 }
 //===========================================================================================================================================================================================
 

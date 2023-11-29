@@ -13,10 +13,16 @@ interface IFormComponentProps<T> {
 function FormComponent<T extends Record<PropertyKey, string>>({ children, data, classesParent, onSubmit, configData }: IFormComponentProps<T>) {
 	const [formState, setFormState] = useState<T>(data || {});
 
-	const [error, serError] = useState<Record<PropertyKey, string>>({});
+	const [error, setError] = useState<Record<PropertyKey, string>>({});
 
 	const handlerChange = ({ key, value }: IDataPropsChangeForm): void => {
 		setFormState({ ...formState, [key]: value });
+	};
+
+	const validation = (): void => {
+		const errors = validator(configData, formState);
+
+		setError(errors);
 	};
 
 	const handlerSubmitForm = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -35,6 +41,8 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 		return false;
 	};
 
+	const arrayKeysErrors: string[] = Object.keys(error); // Если в состоянии ошибок есть ключи, делаем вывод, что блокировать кнопку можно
+
 	const newChildren = Children.map(children, (child) => {
 		if (child && typeof child === 'object' && !isIterable(child)) {
 			let props = {};
@@ -42,10 +50,13 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 			if (child.type === 'button') {
 				const isSubmitBtn = child.props.type === undefined || child.props.type === 'submit';
 
+				const isDisabled = isSubmitBtn && arrayKeysErrors.length !== 0;
+
 				props = {
 					...child.props,
 					type: isSubmitBtn ? 'submit' : 'button',
-					className: `${classesParent}__sub-btn ${child.props.className ? child.props.className : ''}`
+					className: `${classesParent}__sub-btn ${child.props.className ? child.props.className : ''} ${isDisabled ? 'disabled-btn' : ''}`,
+					disabled: (isDisabled ? true : false)
 				};
 			} else {
 				props = child.props.typeElement === 'skip' ?
@@ -69,10 +80,8 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 	});
 
 	useEffect((): void => {
-		const errors = validator(configData, formState);
-
-		serError(errors);
-	}, [formState, configData]);
+		validation();
+	}, [configData, formState]);
 
 	return (
 		<form onSubmit={handlerSubmitForm} className={`${classesParent}__form-component form-block`}>
