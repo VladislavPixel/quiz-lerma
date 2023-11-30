@@ -1,28 +1,34 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { privacyPolicyParagraphs } from '../../auxiliary-content/privacy-policy';
 import { privacyPolicy } from '../../routes';
 import type { IElementPrivacyPolicy, ISettingInsertElement } from '../../type/privacy-policy-rules-data';
+import { LinkMenu } from '../common/link-menu';
 
 const PrivacyPolicyContent: FC = () => {
 	const { icon, altIcon } = privacyPolicy;
 
-	const insertingLink = (value: string, substr: string, config: undefined | ISettingInsertElement): string => {
+	const insertingLink = (classesParent: string, value: string, substr: string, config: undefined | ISettingInsertElement) => {
 		if (config === undefined) {
 			return value;
 		}
 
-		console.log(substr, config);
+		const arr = value.split(substr);
 
-		const regExp = new RegExp(`/${substr}/`);
+		if (arr.length !== 2) {
+			return value;
+		}
 
-		console.log(regExp); // Доделать замену {} на линк значение
+		const { type, data } = config;
 
-		const newValue = value.replace(regExp, (str) => {
-			
-			return str;
-		});
+		const { path, text, title, icon, altIcon } = data;
 
-		return newValue;
+		return (
+			<React.Fragment>
+				{arr[0]}
+				<LinkMenu classesParent={classesParent} type={type} path={path} text={text} title={title} icon={icon} altIcon={altIcon} isImg={false} />
+				{arr[1]}
+			</React.Fragment>
+		);
 	};
 
 	const recursiveGeneration = (arrData: IElementPrivacyPolicy[] | null | undefined) => {
@@ -39,7 +45,7 @@ const PrivacyPolicyContent: FC = () => {
 
 					return (
 						<li key={el._id} className='privacy-policy__li-el'>
-							<span className={isTitle ? 'privacy-policy__head-span' : ''}>{insertingLink(textValue, '{}', el.insertElement)}</span>
+							<span className={isTitle ? 'privacy-policy__head-span' : ''}>{insertingLink('privacy-policy', textValue, '{}', el.insertElement)}</span>
 							{el.childrens && recursiveGeneration(el.childrens)}
 						</li>
 					);

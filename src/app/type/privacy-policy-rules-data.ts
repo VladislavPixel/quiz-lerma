@@ -1,8 +1,9 @@
 import type { IMainMenuElement } from './main-menu';
+import type { LinkTypes } from './link';
 
 export interface ISettingInsertElement {
 	data: IMainMenuElement;
-	type: string;
+	type: LinkTypes;
 };
 
 export interface IElementPrivacyPolicy {

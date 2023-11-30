@@ -37,3 +37,11 @@
 		text-decoration: underline;
 	}
 }
+
+.privacy-policy__li-el a {
+	color: aliceblue;
+	transition: color 0.3s ease 0s;
+	&:hover {
+		color: $basicDarkPurple;
+	}
+}

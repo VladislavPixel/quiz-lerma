@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import type { LinkTypes } from '../../type/link';
 
 interface ILinkMenuProps {
 	classesParent: string;
@@ -8,7 +9,7 @@ interface ILinkMenuProps {
 	icon: string;
 	altIcon: string;
 	text: string;
-	type: 'NavLink' | 'Link' | 'a:href';
+	type: LinkTypes;
 	isImg: boolean;
 };
 
