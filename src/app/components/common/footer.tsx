@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { logoRoute, routesData, ADVERTISEMENT_PATH, socialNetworkIterable } from '../../routes';
+import { logoRoute, routesData, ADVERTISEMENT_PATH, socialNetworkIterable, emailRoute } from '../../routes';
 import type { IMainMenuElement } from '../../type/main-menu';
 import { LinkMenu } from './link-menu';
 import { Link } from 'react-router-dom';
@@ -14,6 +14,8 @@ const Footer: FC<IFooterProps> = ({ classesParent }) => {
 	const date: Date = new Date();
 
 	const currentYear: number = date.getFullYear();
+
+	const { text: textEmail, title, path: pathEmail } = emailRoute;
 
 	return (
 		<footer className={`${classesParent}__footer-block block-footer`}>
@@ -56,7 +58,7 @@ const Footer: FC<IFooterProps> = ({ classesParent }) => {
 				</div>
 				<div className='block-footer__email'>
 					<span>По всем вопросам обращайтесь на нашу почту:</span>
-					<a title='Нажмите, чтобы отправить нам сообщение на почту.' href='mailto:quiz.lerma.service@yandex.ru'>quiz.lerma.service@yandex.ru</a>
+					<a title={title} href={pathEmail}>{textEmail}</a>
 				</div>
 				<p className='block-footer__copyright'>©️ 2023г. - {currentYear}г. Все права защищены. Россия.</p>
 				<p className='block-footer__sub-copy'>Все упомянутые торговые марки являются собственностью соответствующих владельцев. Мы не несем ответственность за случайные совпадения и различные упоминания на нашем вебсайте. Мы не преследуем цель незаконного распространения материалов, поэтому если Вы являетесь правообладателем, сообщите нам о нарушении по указанным здесь контактам.</p>

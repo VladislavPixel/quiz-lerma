@@ -41,7 +41,7 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 		return false;
 	};
 
-	const arrayKeysErrors: string[] = Object.keys(error); // Если в состоянии ошибок есть ключи, делаем вывод, что блокировать кнопку можно
+	const arrayKeysErrors: string[] = Object.keys(error); // Если в состоянии ошибок есть ключи, делаем вывод, что блокировать кнопку формы можно
 
 	const newChildren = Children.map(children, (child) => {
 		if (child && typeof child === 'object' && !isIterable(child)) {

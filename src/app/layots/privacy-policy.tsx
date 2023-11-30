@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { PrivacyPolicyPage } from '../components/pages/privacy-policy-page';
 
 const PrivacyPolicy: FC = () => {
-   return <PrivacyPolicyPage />;
+  return <PrivacyPolicyPage />;
 };
 
 export { PrivacyPolicy };

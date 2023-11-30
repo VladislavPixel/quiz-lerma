@@ -92,6 +92,15 @@ export const authRoute: IMainMenuElement = {
 	hoverMenu: hoverMenuDataForAuth
 };
 
+export const emailRoute: IMainMenuElement = {
+	_id: 10000,
+	text: 'quiz.lerma.service@yandex.ru',
+	path: 'mailto:quiz.lerma.service@yandex.ru',
+	icon: './assets/images/icons/email.svg',
+	altIcon: 'Иконка почтового конверта',
+	title: 'Нажмите, чтобы отправить нам сообщение на почту.'
+};
+
 const routesData: MainMenu = [
 	logoRoute,
 	{ _id: 22, text: 'Поиск', path: SEARCH_PATH, icon: './assets/images/icons/search.svg', altIcon: 'Иконка поиска - лупа.', title: 'Нажмите, чтобы перейти на страницу поиска по сайту.' },

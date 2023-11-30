@@ -4,21 +4,22 @@ import { Footer } from '../common/footer';
 import { Header } from '../common/header';
 import { HeadMessageLove } from '../common/head-message-love';
 import { ContentWrapper } from '../common/content-wrapper';
+import { PrivacyPolicyContent } from '../ui/privacy-policy-content';
 
 const PrivacyPolicyPage: FC = () => {
-   return (
-      <Skeleton isSidebar={true} classesParent='privacy-policy'>
-         <React.Fragment>
-            <Header classesParent='privacy-policy'>
+	return (
+		<Skeleton isSidebar={true} classesParent='privacy-policy'>
+			<React.Fragment>
+				<Header classesParent='privacy-policy'>
 					<HeadMessageLove classesParent='header' />
 				</Header>
-            <ContentWrapper classesParent='privacy-policy'>
-
+				<ContentWrapper classesParent='privacy-policy'>
+					<PrivacyPolicyContent />
 				</ContentWrapper>
-            <Footer classesParent='privacy-policy' />
-         </React.Fragment>
-      </Skeleton>
-   );
+				<Footer classesParent='privacy-policy' />
+			</React.Fragment>
+		</Skeleton>
+	);
 };
 
 export { PrivacyPolicyPage };
