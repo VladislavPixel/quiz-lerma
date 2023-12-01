@@ -17,4 +17,36 @@
 		height: 70px;
 		margin-bottom: 7px;
 	}
+	&__list {
+		color: $darkGrayColor;
+	}
+	&__li-el {
+		font-size: 17px;
+		line-height: 120%;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	&__head-span {
+		font-size: 25px;
+		line-height: 120%;
+		margin-bottom: 10px;
+		display: block;
+		color: $basicPurple;
+		text-decoration: underline;
+	}
+}
+
+.service-rules__li-el {
+	.toggle {
+		cursor: pointer;
+		color: aliceblue;
+		font-weight: 800;
+		font-size: 21px;
+		transition: color 0.3s ease 0s;
+		&:hover {
+			color: $basicDarkPurple;
+		}
+	}
 }

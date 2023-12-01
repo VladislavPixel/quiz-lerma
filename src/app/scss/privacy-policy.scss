@@ -41,6 +41,8 @@
 .privacy-policy__li-el a {
 	color: aliceblue;
 	transition: color 0.3s ease 0s;
+	font-size: 21px;
+	font-weight: 800;
 	&:hover {
 		color: $basicDarkPurple;
 	}
