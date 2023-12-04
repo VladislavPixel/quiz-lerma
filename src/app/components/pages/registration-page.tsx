@@ -41,7 +41,7 @@ const RegistrationPage: FC = () => {
 		console.log(result, "Результат, который пришел из формы");
 	};
 
-	const configData: IConfigData = {
+	const configData: IConfigData = { // доделать конфиг регистрации, остановился на повторить пароль но не добавил в валидатор
 		name: {
 			[IS_REQUIRED]: {
 				message: 'Поле "Имя" является обязательным для заполнения.'
