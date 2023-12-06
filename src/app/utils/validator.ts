@@ -33,6 +33,11 @@ function validator<T extends Record<PropertyKey, string>>(config: IConfigData, d
 			case IS_EMAIL:
 				isErr = !(/(.)+[@]{1,1}(.)+[.](.)+/.test(value));
 			break;
+			case IS_TARGET:
+				const x = currentSetting[nameSetting];
+
+				isErr = !(x && data[x.targetKey] === value);
+			break;
 			case IS_MIN:
 				const m = currentSetting[nameSetting];
 
@@ -55,7 +60,7 @@ function validator<T extends Record<PropertyKey, string>>(config: IConfigData, d
 
 		const arrKeysSettingsConfig = Object.keys(settingsConfig) as (keyof ISettingData)[];
 
-		arrKeysSettingsConfig.forEach((keySetting: keyof ISettingData): void => { // isRequired  isMax  isMin  isContainsElInUpper  isNum  isSpecChar
+		arrKeysSettingsConfig.forEach((keySetting: keyof ISettingData): void => { // isRequired  isMax  isMin  isContainsElInUpper  isNum  isSpecChar  isEmail  isTarget
 			const result = validate(keySetting, key, settingsConfig);
 
 			if (result) {

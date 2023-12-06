@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, FC } from 'react';
 import type { IDataPropsChangeForm } from '../../../type/form';
+import { KEY_PASSWORD } from '../../../auxiliary-content/repeat-password-setting-for-validator';
 
 interface ITextField {
 	placeholder: string;
@@ -35,11 +36,11 @@ const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, ty
 
 	const isIconName = typeof iconName === 'string' && iconName !== '';
 
-	const isPassword = type === 'password';
+	const isPassword = type === KEY_PASSWORD;
 
 	const currentIconEyeName = !isShow ? 'eye' : 'eye-secret';
 
-	const correctType = isPassword && isShow ? 'text' : isPassword && !isShow ? 'password' : type === undefined ? 'text' : type;
+	const correctType = isPassword && isShow ? 'text' : isPassword && !isShow ? KEY_PASSWORD : type === undefined ? 'text' : type;
 
 	const isError = error && typeof error === 'string' && error !== '';
 
