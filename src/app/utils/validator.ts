@@ -55,7 +55,7 @@ function validator<T extends Record<PropertyKey, string>>(config: IConfigData, d
 		return isErr;
 	};
 
-	Object.keys(config).forEach((key: string): void => { // login  name  password  surname  email
+	Object.keys(config).forEach((key: string): void => { // login  name  password  surname  email  repeatPassword  keyPhrase  aboutMe  userAgreement
 		const settingsConfig: ISettingData = config[key];
 
 		const arrKeysSettingsConfig = Object.keys(settingsConfig) as (keyof ISettingData)[];

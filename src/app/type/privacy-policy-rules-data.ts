@@ -12,7 +12,7 @@ export interface IElementPrivacyPolicy {
 	insertElement?: ISettingInsertElement;
 	title?: string;
 	childrens?: IElementPrivacyPolicy[];
-	toggle?: { isActive: boolean };
+	toggle?: { isActive: boolean, title: string };
 };
 
 export type IPrivacyPolicyRulesData = IElementPrivacyPolicy[];

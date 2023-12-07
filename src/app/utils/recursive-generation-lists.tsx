@@ -27,7 +27,7 @@ const recursiveGenerationLists = ({ classesParent, dataForRendering, callbackFor
 
 				const elements = (
 					<React.Fragment>
-						<span className={(isTitle ? `${classesParent}__head-span` : '') + (isToggleElment ? ' toggle' : '')}>{insertingLink(classesParent, textValue, '{}', el.insertElement)}</span>
+						<span title={isToggleElment ? el.toggle?.title : ''} className={(isTitle ? `${classesParent}__head-span` : '') + (isToggleElment ? ' toggle' : '')}>{insertingLink(classesParent, textValue, '{}', el.insertElement)}</span>
 						{
 							el.childrens && isToggleElment && settingToggle && settingToggle[el._id] && settingToggle[el._id].isActive ?
 								recursiveGenerationLists({ classesParent: classesParent, dataForRendering: el.childrens, callbackForUpdateToggle: callbackForUpdateToggle, settingToggle: settingToggle }) :

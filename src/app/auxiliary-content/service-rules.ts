@@ -22,7 +22,7 @@ const serviceRulesParagraphs: IPrivacyPolicyRulesData = [
 			{
 				_id: '1.2',
 				text: 'Что считается оскорблением?',
-				toggle: { isActive: false },
+				toggle: { isActive: false, title: 'Нажмите, чтобы раскрыть блок и понять, что считается оскорблением.' },
 				childrens: [
 					{
 						_id: '1.2.1',
@@ -45,7 +45,7 @@ const serviceRulesParagraphs: IPrivacyPolicyRulesData = [
 			{
 				_id: '1.3',
 				text: 'Что считается разжиганием вражды?',
-				toggle: { isActive: false },
+				toggle: { isActive: false, title: 'Нажмите, чтобы раскрыть блок и понять, что считается разжиганием вражды.' },
 				childrens: [
 					{
 						_id: '1.3.1',
@@ -68,7 +68,7 @@ const serviceRulesParagraphs: IPrivacyPolicyRulesData = [
 			{
 				_id: '1.6',
 				text: '1.4 Не нарушайте законы страны, в которой находится сервис (РФ): список запрещенного в РФ контента.',
-				toggle: { isActive: false },
+				toggle: { isActive: false, title: 'Нажмите, чтобы раскрыть и понять, что считается запрещенным контентом в РФ.' },
 				childrens: [
 					{
 						_id: '1.6.1',
