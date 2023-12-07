@@ -1,4 +1,4 @@
-import { useState, Children, cloneElement, useEffect } from 'react';
+import { useState, Children, cloneElement, useEffect, useCallback } from 'react';
 import type { IDataPropsChangeForm, IConfigData } from '../../../type/form';
 import { validator } from '../../../utils/validator';
 
@@ -15,9 +15,9 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 
 	const [error, setError] = useState<Record<PropertyKey, string>>({});
 
-	const handlerChange = ({ key, value }: IDataPropsChangeForm): void => {
-		setFormState({ ...formState, [key]: value });
-	};
+	const handlerChange = useCallback(({ key, value }: IDataPropsChangeForm): void => {
+		setFormState((prevState) => ({ ...prevState, [key]: value }));
+	}, []);
 
 	const validation = (): void => {
 		const errors = validator(configData, formState);
@@ -58,19 +58,23 @@ function FormComponent<T extends Record<PropertyKey, string>>({ children, data, 
 					className: `${classesParent}__sub-btn ${child.props.className ? child.props.className : ''} ${isDisabled ? 'disabled-btn' : ''}`,
 					disabled: (isDisabled ? true : false)
 				};
+			} else if (typeof child.type === 'object') {
+				props = {
+					...child.props,
+					value: formState[child.props.name],
+					classesParent,
+					onChange: handlerChange,
+					error: error[child.props.name]
+				};
+			} else if (typeof child.type === 'function' && child.props.typeElement === 'skip') {
+				props = {
+					...child.props,
+					classesParent
+				};
 			} else {
-				props = child.props.typeElement === 'skip' ?
-					{
-						...child.props,
-						classesParent
-					} :
-					{
-						...child.props,
-						value: formState[child.props.name],
-						classesParent,
-						onChange: handlerChange,
-						error: error[child.props.name]
-					};
+				props = {
+					...child.props
+				};
 			}
 
 			return cloneElement(child, props);

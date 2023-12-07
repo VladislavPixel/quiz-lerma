@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, FC } from 'react';
+import { ChangeEvent, useState, FC, memo } from 'react';
 import type { IDataPropsChangeForm } from '../../../type/form';
 import { KEY_PASSWORD } from '../../../auxiliary-content/repeat-password-setting-for-validator';
 
@@ -14,7 +14,7 @@ interface ITextField {
 	error?: string;
 };
 
-const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, type, iconName, onChange, value, error }) => {
+const TextField: FC<ITextField> = memo(({ placeholder, name, label, classesParent, type, iconName, onChange, value, error }) => {
 	const [isShow, setShow] = useState<boolean>(false);
 
 	const handlerChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -67,6 +67,6 @@ const TextField: FC<ITextField> = ({ placeholder, name, label, classesParent, ty
 			</div>
 		</div>
 	);
-};
+});
 
 export { TextField };

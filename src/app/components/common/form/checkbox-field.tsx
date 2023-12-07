@@ -1,4 +1,4 @@
-import { FC, ChangeEvent } from 'react';
+import { FC, ChangeEvent, memo } from 'react';
 import type { IDataPropsChangeForm } from '../../../type/form';
 
 interface ICheckboxFieldProps {
@@ -10,7 +10,7 @@ interface ICheckboxFieldProps {
 	error?: string;
 };
 
-const CheckboxField: FC<ICheckboxFieldProps> = ({ classesParent, label, name, value, onChange, error }) => {
+const CheckboxField: FC<ICheckboxFieldProps> = memo(({ classesParent, label, name, value, onChange, error }) => {
 	const handlerChange = (event: ChangeEvent<HTMLInputElement>): void => {
 		const result = {
 			key: name,
@@ -39,6 +39,6 @@ const CheckboxField: FC<ICheckboxFieldProps> = ({ classesParent, label, name, va
 			</div>
 		</div>
 	);
-};
+});
 
 export { CheckboxField };
