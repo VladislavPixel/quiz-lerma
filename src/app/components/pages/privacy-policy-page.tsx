@@ -4,7 +4,8 @@ import { Footer } from '../common/footer';
 import { Header } from '../common/header';
 import { HeadMessageLove } from '../common/head-message-love';
 import { ContentWrapper } from '../common/content-wrapper';
-import { PrivacyPolicyContent } from '../ui/privacy-policy-content';
+import { PrivacyRulesContent } from '../ui/privacy-rules-content';
+import { privacyPolicyContentConfig } from '../../auxiliary-content/privacy-policy-content-config';
 
 const PrivacyPolicyPage: FC = () => {
 	return (
@@ -14,7 +15,7 @@ const PrivacyPolicyPage: FC = () => {
 					<HeadMessageLove classesParent='header' />
 				</Header>
 				<ContentWrapper classesParent='privacy-policy'>
-					<PrivacyPolicyContent />
+					<PrivacyRulesContent {...privacyPolicyContentConfig} />
 				</ContentWrapper>
 				<Footer classesParent='privacy-policy' />
 			</React.Fragment>

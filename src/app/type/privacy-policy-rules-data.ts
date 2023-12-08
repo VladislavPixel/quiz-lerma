@@ -15,4 +15,14 @@ export interface IElementPrivacyPolicy {
 	toggle?: { isActive: boolean, title: string };
 };
 
+export type AuxSettingToggle = Record<string, { isActive: boolean }>;
+
 export type IPrivacyPolicyRulesData = IElementPrivacyPolicy[];
+
+export interface IServiceRulesContentConfig {
+	classesParent: string;
+	title: string;
+	iconImg: string;
+	altImg: string;
+	dataForRendering: IPrivacyPolicyRulesData;
+};
