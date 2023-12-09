@@ -14,17 +14,17 @@ interface PrivacyRulesContentProps {
 
 const PrivacyRulesContent: FC<PrivacyRulesContentProps> = ({ classesParent, title, iconImg, altImg, dataForRendering, callbackForUpdateToggle, settingToggle }) => {
 	const contentJSX = recursiveGenerationLists({
-		classesParent,
+		classesParent: 'block-privacy-rules',
 		dataForRendering,
 		callbackForUpdateToggle,
 		settingToggle
 	});
 
    return (
-      <div className={`${classesParent}__block`}>
-			<div className={`${classesParent}__content _container`}>
-				<img className={`${classesParent}__icon`} src={iconImg} alt={altImg} />
-				<h2 className={`${classesParent}__main-title`}>{title}</h2>
+      <div className={`${classesParent}__block block-privacy-rules`}>
+			<div className='block-privacy-rules__content _container'>
+				<img className='block-privacy-rules__icon' src={iconImg} alt={altImg} />
+				<h2 className='block-privacy-rules__main-title'>{title}</h2>
 				{contentJSX}
 			</div>
 		</div>

@@ -1,0 +1,62 @@
+.privacy-policy__container,
+.service-rules__container {
+   flex-direction: column;
+	background-color: $mainBackgroundColor;
+}
+
+.privacy-policy__main-section,
+.service-rules__main-section {
+   padding: 15px;
+}
+
+.block-privacy-rules {
+   &__main-title {
+		color: aliceblue;
+		font-size: 40px;
+		line-height: 120%;
+		margin-bottom: 10px;
+	}
+   &__icon {
+		width: 70px;
+		height: 70px;
+		margin-bottom: 7px;
+	}
+   &__list {
+		color: $darkGrayColor;
+	}
+   &__li-el {
+		font-size: 17px;
+		line-height: 120%;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+      a {
+         color: aliceblue;
+         transition: color 0.3s ease 0s;
+         font-size: 21px;
+         font-weight: 800;
+         &:hover {
+            color: $basicDarkPurple;
+         }
+      }
+      .toggle {
+         cursor: pointer;
+         color: aliceblue;
+         font-weight: 800;
+         font-size: 21px;
+         transition: color 0.3s ease 0s;
+         &:hover {
+            color: $basicDarkPurple;
+         }
+      }
+	}
+   &__head-span {
+		font-size: 25px;
+		line-height: 120%;
+		margin-bottom: 10px;
+		display: block;
+		color: $basicPurple;
+		text-decoration: underline;
+	}
+}
